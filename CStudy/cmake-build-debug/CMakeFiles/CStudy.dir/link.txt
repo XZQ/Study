@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\CStudy.dir/objects.a
+C:\mingw64\mingw64\bin\ar.exe cr CMakeFiles\CStudy.dir/objects.a @CMakeFiles\CStudy.dir\objects1.rsp
+C:\mingw64\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\CStudy.dir/objects.a -Wl,--no-whole-archive  -o CStudy.exe -Wl,--out-implib,libCStudy.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CStudy.dir\linklibs.rsp

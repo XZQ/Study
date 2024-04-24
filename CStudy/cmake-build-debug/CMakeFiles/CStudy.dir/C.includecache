@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/XZQ/CLionProjects/CStudy/test1.c
+stdio.h
+-
+test1.h
+C:/Users/XZQ/CLionProjects/CStudy/test1.h
+
+C:/Users/XZQ/CLionProjects/CStudy/test1.h
+
