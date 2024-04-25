@@ -1,0 +1,156 @@
+import com.xzq.extension.Animal
+import com.xzq.extension.Pig
+import com.xzq.namedomaincontainer.TestExtension
+import com.xzq.namedomaincontainer.TestDomainObj
+
+/***
+ * 每一个 Groovy 脚本都会被编译器编译成 Script 字节码，而每一个 build.gradle 脚本都会被编译器编译成 Project 字节码，
+ * 所以我们在 build.gradle 中所写的一切逻辑都是在 Project 类内进行书写的。
+ * 下面，我们将按照由易到难的套路来介绍 Project 的一系列重要的 API
+ *
+ * 作者：jsonchao37382
+ * 链接：https://juejin.im/post/6844904132092903437
+ * */
+
+
+//this.getProjects()
+//
+//def getProjects() {
+//    println "<================>"
+//    println " Root Project Start "
+//    println "<================>"
+//    getAllprojects().eachWithIndex { Project project, int index ->
+//        println "child Project is $project  $project.name  $index "
+//    }
+//}
+
+
+//this.getSubProjects()
+//
+//def getSubProjects() {
+//    println "<================>"
+//    println " Sub Project Start "
+//    println "<================>"
+//    this.getSubprojects().each { Project project ->
+//        println "child Project is $project"
+//    }
+//}
+
+
+//task task0 {
+//    println " task0"
+//}
+
+
+//task task1 {
+//    println " task1"
+////    doFirst {
+////        println('task1 doFirst')
+////    }
+////    doLast {
+////        println('task1 doLast')
+////    }
+//}
+
+//task test(dependsOn: [task0, task1]) {
+//    doLast {
+//        println " test"
+//    }
+//}
+//
+//project.task("task2") {
+//    println " task2"
+//}
+//
+//project.tasks.create("task3") {
+//    println " task3"
+//}
+
+// 自定义task的
+//task hello(type: SayTask, constructorArgs: [30])
+//
+//task hello1(type: SayTask, constructorArgs: [18]) {
+//    msg = "XZQ"
+//}
+
+//up to date
+
+//task test1 {
+//    //设置inputs
+//    inputs.property("name", "hjy")
+//    inputs.property("age", 20)
+//    //设置outputs
+//    outputs.file("$buildDir/test.txt")
+//    doLast {
+//        println "exec task task1  $buildDir  "
+//    }
+//}
+//
+//task test2 {
+//    doLast {
+//        println "exec task task2  $buildDir  "
+//    }
+//
+//}
+
+
+////创建的Extension是 暴露出来Animal 类型,创建extension名称是name,该extension的类型是Pig，后面2个是参数
+//Animal aAnimal = getExtensions().create(Animal, "animal", Pig, 3, "hjy")
+////创建的Extension是 Pig 类型
+//Pig aPig = getExtensions().create("pig", Pig, 5, "kobe")
+//
+//animal {
+//    legs = 4    //配置属性
+//}
+//
+//pig {
+//    setLegs 2   //这个是方法调用，也就是 setLegs(2)
+//}
+//
+//task testExt {
+//    println aAnimal
+//    println aPig
+//    //验证 aPig 对象是 ExtensionAware 类型的
+//    println "aPig is a instance of ExtensionAware : ${aPig instanceof ExtensionAware}"
+//}
+
+
+
+def testExt = getExtensions().create("test", TestExtension, project)
+
+test {
+    testDomain {
+        domain2 {
+            msg "This is domain2"
+        }
+        domain1 {
+            msg "This is domain1"
+        }
+        domain3 {
+            msg "This is domain3"
+        }
+    }
+}
+
+task myTask {
+    testExt.test()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+apply plugin: 'maven'
+
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.xzq.plugin'
+version = '1.0.0'
+archivesBaseName = 'java-plugin'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
+
+gradlePlugin {
+    plugins {
+        //此处名字可以随意，下面指定插件id和具体类名
+        javaPlugin {
+            id = 'com.xzq.tb-plugin'
+            implementationClass = 'com.xzq.plugin.TbJavaPlugin'
+        }
+    }
+}

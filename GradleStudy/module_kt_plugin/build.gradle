@@ -1,0 +1,35 @@
+plugins {
+    id 'kotlin'
+    id 'maven-publish'
+//    id 'ivy-publish'
+}
+//apply plugin: 'kotlin'
+
+dependencies {
+    implementation gradleApi()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.xzq.plugin'
+            artifactId 'kotlin-plugin'
+            version '1.0.0'
+            from components.java//https://blog.csdn.net/wenwen091100304/article/details/89792240
+        }
+    }
+
+    repositories {
+//        ivy {
+//            url "../consuming/ivy-repo"
+//        }
+        maven {
+            url = "../repo"
+        }
+    }
+}

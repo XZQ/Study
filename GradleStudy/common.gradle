@@ -1,0 +1,27 @@
+//用来存放项目中的所有配置，统一管理而不是每个moudle自己写一份，
+// 修改起来更加方便
+ext {
+    android = [
+               compileSdkVersion: 29,
+               buildToolsVersion: '30.0.2',
+               minSdkVersion    : 16,
+               targetSdkVersion : 29,
+               versionCode      : 1,
+               versionName      : "1.0.0"
+             ]
+
+
+    java = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8
+           ]
+
+    dependencies = [
+            appcompat       : "androidx.appcompat:appcompat:1.2.0",
+            material        : "com.google.android.material:material:1.2.0",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:1.1.3",
+            livedata        : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
+            viewmodel       : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+                  ]
+
+}

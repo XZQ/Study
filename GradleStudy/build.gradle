@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//apply from: 'lifecycle.gradle'
+
+//apply from: 'projects.gradle'
+
+buildscript {
+
+    ext.kotlin_version = "1.4.0"
+
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url uri('./repo/')
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.0-rc01"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // 引用自定义Gradle插件
+        classpath 'com.xzq.plugin:module-plugin:1.0.0'
+        classpath 'com.xzq.plugin:java-plugin:1.0.0'
+        classpath 'com.xzq.plugin:kotlin-plugin:1.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+//
+//第一种
+apply plugin: 'com.xzq.plugin.module'
+apply plugin: 'com.xzq.kplugin'
+apply plugin: 'com.xzq.tb-plugin'
+
+//第2种
+//apply plugin: com.xzq.plugin.TbJavaPlugin
+//apply plugin: com.xzq.plugin.TbKotlinPlugin
+//apply plugin: com.xzq.plugin.TbModulePlugin
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
