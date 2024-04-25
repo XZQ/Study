@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\CStudy.dir/objects.a
-C:\mingw64\mingw64\bin\ar.exe cr CMakeFiles\CStudy.dir/objects.a @CMakeFiles\CStudy.dir\objects1.rsp
-C:\mingw64\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\CStudy.dir/objects.a -Wl,--no-whole-archive  -o CStudy.exe -Wl,--out-implib,libCStudy.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CStudy.dir\linklibs.rsp
+/Library/Developer/CommandLineTools/usr/bin/cc -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.2 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/CStudy.dir/test1.c.o -o CStudy 

@@ -1,4 +1,4 @@
-ToolSet: w64 6.0 (local)@C:\mingw64\mingw64
+ToolSet: 1.0 (local)Ninja: 1.11.1@/Users/zhiqiang.xia1/Applications/CLion Nova.app/Contents/bin/ninja/mac/aarch64/ninja
 Options: 
 
 Options:
