@@ -10,6 +10,15 @@ repositories {
     mavenCentral()
 }
 
+allprojects {
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            options.compilerArgs << "-Xlint:none"
+//            options.compilerArgs << "-Xlint:unchecked"
+        }
+    }
+}
+
 dependencies {
 //    testImplementation platform('org.junit:junit-bom:5.10.0')
 //    testImplementation 'org.junit.jupiter:junit-jupiter'
