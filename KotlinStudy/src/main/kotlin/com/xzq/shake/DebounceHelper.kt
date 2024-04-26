@@ -1,4 +1,4 @@
-package shake
+package com.xzq.shake
 
 import kotlinx.coroutines.*
 // https://blog.csdn.net/wy313622821/article/details/105579674

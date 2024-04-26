@@ -1,4 +1,4 @@
-package com.xzq.nio;
+package com.xzq.xzq;
 
 
 public class Bean implements Comparable<Bean> {
