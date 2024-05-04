@@ -1,3 +1,0 @@
-/Users/zhiqiang.xia1/Documents/GitHub/Study/CStudy/cmake-build-debug/CMakeFiles/CStudy.dir
-/Users/zhiqiang.xia1/Documents/GitHub/Study/CStudy/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/zhiqiang.xia1/Documents/GitHub/Study/CStudy/cmake-build-debug/CMakeFiles/rebuild_cache.dir

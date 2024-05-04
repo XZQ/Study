@@ -84,7 +84,8 @@ public class Test {
 //        int[] ints = {1, 2, 3};
 //        List<int[]> list1 = Arrays.asList(ints);
 //        System.out.println(list1.size());
-        files();
+//        files();
+        System.out.println("sss");
     }
 
     static void files() {

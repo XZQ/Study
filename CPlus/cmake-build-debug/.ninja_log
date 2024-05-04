@@ -1,0 +1,18 @@
+# ninja log v5
+36	164	7365275063237218	CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.obj	8699280cf63fe56f
+55	180	7365275063499740	CMakeFiles/CPlus.dir/base/Person.cpp.obj	74023933a8e55df4
+112	1198	7365275064211604	CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.obj	d2b2130bb7958c5e
+88	196	7365275063900790	CMakeFiles/CPlus.dir/ptr/SmallSmartPtr.cpp.obj	fe6277311b782535
+124	1711	7365275069498896	CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.obj	3a39a9d1b899f2f4
+136	1723	7365275069418699	CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.obj	c064c1bb74bf4931
+26	1722	7365275069569081	CMakeFiles/CPlus.dir/base/Date.cpp.obj	7e2ea2ffaf181df4
+76	1722	7365275069815025	CMakeFiles/CPlus.dir/ptr/PtrTest.cpp.obj	ce8a968013f856d3
+65	1724	7365275069498896	CMakeFiles/CPlus.dir/base/FunPoint.cpp.obj	d29992f5805c4927
+5	1724	7365275069729491	CMakeFiles/CPlus.dir/base/MyTeacher.cpp.obj	a1f099a8c6d4f94c
+100	1725	7365275069599154	CMakeFiles/CPlus.dir/templates/TemplateTest.cpp.obj	af6e8e78f0f9d3b2
+150	1725	7365275069498896	CMakeFiles/CPlus.dir/memory/Main.cpp.obj	15dbb04c06026047
+180	1725	7365275069478836	CMakeFiles/CPlus.dir/main.cpp.obj	2f58d65425ca3140
+45	1726	7365275069599154	CMakeFiles/CPlus.dir/base/Student.cpp.obj	18f348591cbeedc5
+15	1726	7365275069709439	CMakeFiles/CPlus.dir/base/Construction.cpp.obj	67ce893f0484e990
+165	1726	7365275069428708	CMakeFiles/CPlus.dir/array/CintTest.cpp.obj	c6654586fb8b5681
+1727	2232	7365275080790614	CPlus.exe	35c97356c5b6906a

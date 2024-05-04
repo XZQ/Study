@@ -1,4 +1,4 @@
-package com.xzq.asm;
+package com.xzq.jvm;
 
 public class Main {
 

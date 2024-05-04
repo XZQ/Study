@@ -20,7 +20,7 @@ public class ClassAnalysisMain {
         ClassFile classFile = ClassFileAnalysiser.analysis(codeBuf);
         int cp_info_count = classFile.getConstant_pool_count().toInt();
         CpInfo[] cpInfo = classFile.getConstant_pool();
-        System.out.println("常量池中常量项总数：" + cp_info_count + "  " + cpInfo.length);
+        System.out.println("consant pool  constant" + cp_info_count + "  " + cpInfo.length);
         for (CpInfo cp : cpInfo) {
             if (cp != null) {
                 System.out.println(cp);

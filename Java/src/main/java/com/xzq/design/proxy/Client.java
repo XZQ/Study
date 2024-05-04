@@ -31,10 +31,6 @@ public class Client {
         System.out.println("----    add=" + add);
     }
 
-//    jdk动态代理只能基于接口，代理生成的对象只能赋值给接口变量，而Cglib就不存在这个问题，Cglib是通过生成子类来实现的，代理对象既可以赋值给实现类，又可以赋值给接口。
-//    Cglib速度比jdk动态代理更快，性能更好。
-
-    //  动态代理
     static void proxyDynamic1() {
         FileUploader fileUploader = new RealFileUploader();
         DynamicProxyHandler dynamicProxyHandler = new DynamicProxyHandler(fileUploader);
@@ -45,7 +41,6 @@ public class Client {
         proxyInstance1.upload("sda.txt");
     }
 
-    //  静态代理
     static void proxy1() {
         FileUploader fileUploader = new RealFileUploader();
         ProxyFileUploader proxyFileUploader = new ProxyFileUploader(fileUploader);
@@ -53,3 +48,4 @@ public class Client {
     }
 
 }
+
