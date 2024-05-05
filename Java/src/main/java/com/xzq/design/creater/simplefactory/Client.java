@@ -4,15 +4,11 @@ import java.util.Random;
 
 
 /***
- * 简单工厂
- * 工厂方法
- * 抽象工厂
  */
 public class Client {
 
     public static void main(String[] args) {
         int screenWidth = 100;
-        System.out.println("游戏开始");
         Random random = new Random();
         int x = random.nextInt(screenWidth);
 
@@ -21,12 +17,9 @@ public class Client {
         Enemy tankPlan = new Tank(x, 0);
         tankPlan.show();
 
-        // 简单工厂
         SimpleFactory factory = new SimpleFactory(100);
         factory.create("Airplane").show();
         factory.create("Tank").show();
-
-        // 工厂方法
 
     }
 }
