@@ -1,8 +1,8 @@
 package com.xzq;
 
 
-import com.xzq.structure.list.ListNode;
-import com.xzq.structure.tree.TreeNode;
+import com.xzq.leetcode.structure.list.ListNode;
+import com.xzq.leetcode.structure.tree.TreeNode;
 
 import java.io.File;
 import java.util.*;

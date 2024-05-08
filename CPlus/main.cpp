@@ -310,6 +310,14 @@ int (*p)();
 
 
 // 智能指针 https://blog.csdn.net/qq_56663697/article/details/123964427
+void test_arr() {
+    int array[2][3] = {
+            {1, 2, 3},
+            {4, 5, 6}
+    };
+    cout << &array[0][0] << "  " << &array[0][1] << "  " << &array[0][2] << endl;
+    cout << &array[1][0] << "  " << &array[1][1] << "  " << &array[1][2] << endl;
+}
 
 int main() {
 //    testConstruction();
@@ -320,7 +328,8 @@ int main() {
 //    testNumber();
 //    testConstReference();
 //    testStudent();
-    testFun();
+    // testFun();
+    test_arr();
     return 0;
 }
 
