@@ -1,5 +1,6 @@
-CMakeFiles/CPlus.dir/main.cpp.o: \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/main.cpp \
+CMakeFiles/CPlus.dir/base/Test.cpp.o: \
+  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Test.cpp \
+  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Test.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
@@ -822,8 +823,4 @@ CMakeFiles/CPlus.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/MyTeacher.h \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Construction.h \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Date.h \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Student.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg

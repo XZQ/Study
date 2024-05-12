@@ -11,8 +11,43 @@ using namespace std;
 
 int main() {
     //cout << fac(10) << endl;
-    cstudy();
+//    cstudy();
+    int a = 11;
+    int b = 22;
+    //cout << "a=" << a << "   b=" << b << endl;
+    //swap1(a, b);
+    swap2(a, b);
+    //swap3(&a, &b);
+    //cout << "a=" << a << "   b=" << b << endl;
     return 0;
+}
+
+//引用
+void swap2(int &a, int &b) {
+    cout << "a=" << a << "   b=" << b << endl;
+    //cout << "&a=" << &a << "   &b=" << &b << endl;
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+
+//地址
+void swap3(int *a, int *b) {
+    cout << "a=" << a << "   b=" << b << endl;
+    cout << "a=" << *a << "   b=" << *b << endl;
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+// 值交换
+void swap1(int a, int b) {
+    cout << "a=" << a << "   b=" << b << endl;
+    int tmp;
+    tmp = a;
+    a = b;
+    b = tmp;
+    cout << "a=" << a << "   b=" << b << endl;
 }
 
 void cstudy() {
