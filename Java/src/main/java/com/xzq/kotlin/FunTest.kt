@@ -18,14 +18,6 @@ fun stringMapper(input: Int, mapper: (Int) -> Int): Int {
     return mapper(input)
 }
 
-fun fun1(param: Int): String {
-    return "";
-}
-
-fun fun2(param: (Int) -> String): String {
-    return param(1);
-}
-
 
 val f1: (Int, Int) -> Int = { p: Int, q: Int ->
     p + q

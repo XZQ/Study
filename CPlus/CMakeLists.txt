@@ -21,4 +21,7 @@ add_executable(CPlus
         extendsPolymorphic/Base.cpp extendsPolymorphic/Base.h extendsPolymorphic/Derived.cpp extendsPolymorphic/Derived.h extendsPolymorphic/Derived2.cpp extendsPolymorphic/Derived2.h
         memory/main.cpp memory/main.h
         array/CintTest.cpp
-        main.cpp)
+        main.cpp
+        datastruct/Solution.cpp
+        datastruct/algotithm/Algorithm.cpp
+        datastruct/algotithm/Algorithm.h)

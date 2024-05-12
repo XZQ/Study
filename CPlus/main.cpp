@@ -319,7 +319,7 @@ void test_arr() {
     cout << &array[1][0] << "  " << &array[1][1] << "  " << &array[1][2] << endl;
 }
 
-int main() {
+/*int main() {
 //    testConstruction();
 //    testMyTeacher2();
 //    testDate();
@@ -331,6 +331,6 @@ int main() {
     // testFun();
     test_arr();
     return 0;
-}
+}*/
 
 
