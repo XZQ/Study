@@ -25,10 +25,49 @@ fun main() {
 //
 //    Thread.sleep(2 * 60 * 1000L)
 
-    val count = COUNTDOWN_TIME / 1000L - 2321 / 1000L + 1
-    println("count=$count")
-    testArray()
+
+    val dataList = listOf(11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+    val time = measureTimeMillis {
+        // 按顺序来处理
+        dataList.forEach {
+            processingData(it)
+        }
+    }
+    println("Executed in $time ms")
+
+    runBlocking {
+        val time2 = measureTimeMillis {
+            dataList.parallelProcessing(10) {
+                processingData(it)
+            }
+        }
+        println("Exec total time >> $time2")
+    }
 }
+
+// https://juejin.cn/post/7377662459920891941?utm_source=gold_browser_extension
+suspend fun <T> List<T>.parallelProcessing(parallelism: Int = 10, processBlock: suspend (T) -> Unit) {
+    withContext(Dispatchers.Default) {
+        val inputChannel = Channel<T>(parallelism)
+        launch {
+            forEach {
+                inputChannel.send(it)
+            }
+            inputChannel.close()
+        }
+
+        for (i in 0..parallelism) launch {
+            for (element in inputChannel) {
+                processBlock(element)
+            }
+        }
+    }
+}
+
+fun processingData(value: Int) {
+    Thread.sleep(100L)
+}
+
 
 fun testArray() {
     val array1 = arrayOf(1, 2, 3)
@@ -51,7 +90,7 @@ fun testArray() {
         println("index=$index")
     }
     array2.forEach { }
-    
+
     array2.forEachIndexed { index, i ->
         println("index=$index")
     }

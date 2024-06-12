@@ -1,4 +1,4 @@
-package flow
+package com.xzq.flow
 
 data class Father(private val name: String)
 

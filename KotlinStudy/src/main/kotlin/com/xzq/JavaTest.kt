@@ -1,4 +1,4 @@
-import flow.Bean
+import com.xzq.flow.Bean
 import java.util.*
 import kotlin.collections.ArrayList
 

@@ -1,4 +1,4 @@
-package flow
+package com.xzq.flow
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
