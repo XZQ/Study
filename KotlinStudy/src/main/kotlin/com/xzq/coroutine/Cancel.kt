@@ -1,16 +1,17 @@
 package coroutine
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 
 fun main() {
     testSynchronized()
+
+
 }
 
-
+fun suspendCancellableCoroutineTest() {
+    return suspendCancellableCoroutineTest()
+}
 
 
 fun testSynchronized() = runBlocking<Unit> {

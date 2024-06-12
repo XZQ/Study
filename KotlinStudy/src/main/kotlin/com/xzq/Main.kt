@@ -27,6 +27,34 @@ fun main() {
 
     val count = COUNTDOWN_TIME / 1000L - 2321 / 1000L + 1
     println("count=$count")
+    testArray()
+}
+
+fun testArray() {
+    val array1 = arrayOf(1, 2, 3)
+    array1[0] = 1
+    val array2 = arrayOfNulls<Int>(5)
+    array2[0] = 1
+    array2[1] = 2
+    array2[2] = 3
+    array2[3] = 4
+    array2[4] = 5
+    for (i in array2) {
+        println("i=$i")
+    }
+
+    for (i in array2.indices) {
+        println("i=$i")
+    }
+
+    for ((index, _) in array1.withIndex()) {
+        println("index=$index")
+    }
+    array2.forEach { }
+    
+    array2.forEachIndexed { index, i ->
+        println("index=$index")
+    }
 }
 
 val resDetailCountDown = MutableStateFlow<Long>(1)
