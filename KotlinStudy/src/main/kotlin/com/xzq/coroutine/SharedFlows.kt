@@ -9,7 +9,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
 fun main() {
-    testStatedFlow()
+    testSharedFlow()
 }
 
 fun testStatedFlow() = runBlocking(Dispatchers.Default) {

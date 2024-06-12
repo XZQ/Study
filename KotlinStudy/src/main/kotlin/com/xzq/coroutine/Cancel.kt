@@ -1,12 +1,10 @@
-package coroutine
+package com.xzq.coroutine
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 
 fun main() {
     testSynchronized()
-
-
 }
 
 fun suspendCancellableCoroutineTest() {
