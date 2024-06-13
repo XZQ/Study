@@ -42,7 +42,7 @@ fun testSharedFlow1() = runBlocking<Unit> {
     repeat(3) {
         sharedFlow.emit(it)
     }
-    // 1、订阅钱前发送，收不到数据
+    // 1、订阅前发送，收不到数据
     launch {
         sharedFlow.collect {
             println("Coroutine3: Send ${Thread.currentThread().name} $it")
@@ -58,7 +58,7 @@ fun testSharedFlow1() = runBlocking<Unit> {
     repeat(3) {
         sharedFlow1.emit(it)
     }
-    // 2、虽然订阅前发送，射嘴了
+    // 2、虽然订阅前发送,但是可以收到数据
     launch {
         sharedFlow1.collect {
             println("Coroutine3: Send ${Thread.currentThread().name} $it")

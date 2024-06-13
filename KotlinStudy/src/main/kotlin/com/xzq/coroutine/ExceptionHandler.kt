@@ -2,18 +2,155 @@ package com.xzq.coroutine
 
 import kotlinx.coroutines.*
 
-// https://www.jianshu.com/p/78260db5c0e6
+
+/*
+异常处理
+1、协成体内 使用try catch
+2、使用 CoroutineExceptionHandler
+
+1、Job：控制协程的生命周期
+2、CoroutineDispatcher：向合适的线程分发任务
+3、CoroutineName：协程的名称
+4、CoroutineExceptionHandler：处理被捕获的异常
+    val scope = CoroutineScope(Job() + Dispatchers.Default + CoroutineName("testCoroutine") + exceptionHandler)
+    结构化并发
+    val scope1 = CoroutineScope(SupervisorJob() + Dispatchers.Default + CoroutineName("testCoroutine") + exceptionHandler)
+*/
 
 private val exceptionHandler = CoroutineExceptionHandler { _, exception ->
-    println("----    exceptionHandler= ${Thread.currentThread().name}   CoroutineExceptionHandler exception : ${exception.message}")
+    println("---->>    exceptionHandler= ${Thread.currentThread().name}   CoroutineExceptionHandler exception : ${exception.message}")
 }
+
+
+val scope = CoroutineScope(Job() + Dispatchers.Default + CoroutineName("testCoroutine") + exceptionHandler)
+val visorJob = CoroutineScope(SupervisorJob() + Dispatchers.Default + CoroutineName("testCoroutine") + exceptionHandler)
 
 
 fun main() {
-    testCaptureN()
+    structTest()
 }
 
-fun testCaptureN() = runBlocking<Unit> {
+fun structTest() = runBlocking<Unit> {
+    /*
+    val jobA = scope.launch {
+         println("---->>   jobA=:${Thread.currentThread().name}")
+         val jobChild = launch(Dispatchers.IO + CoroutineName("jobChild")) {
+             delay(5000L)
+             println("---->>   jobChild=:${Thread.currentThread().name}")
+         }
+     }
+     val jobB = scope.launch(CoroutineName("jobB")) {
+         delay(5000L)
+         println("---->>   jobB=:${Thread.currentThread().name}")
+     }
+
+     // 取消jobA，也会取消jobChild
+     // jobA.cancel()
+     // jobA,jobB 都会被取消
+     scope.cancel()
+     */
+
+    // 可正常打印Log
+    val scope = CoroutineScope(SupervisorJob() + CoroutineExceptionHandler { _, _ -> })
+    visorJob.launch {
+        delay(1000L)
+        val value = 100 / 0
+        println("---->>   visorJobA=:${Thread.currentThread().name}")
+    }
+    visorJob.launch {
+        delay(2000L)
+        println("---->>   visorJobB=:${Thread.currentThread().name}")
+    }
+
+    Thread.sleep(3000L)
+
+    //joinAll(job1, job2)
+}
+
+fun tryCatchTest() = runBlocking<Unit> {
+    // 可捕获异常
+    /*
+    launch {
+        println("---->>   :${Thread.currentThread().name}  start")
+        withContext(Dispatchers.IO) {
+            try {
+                val value = 100 / 0
+            } catch (e: Exception) {
+                println("---->>   :${e.message}")
+            }
+        }
+        println("---->>   :${Thread.currentThread().name}  end")
+    }
+    launch {
+        println("---->>   :${Thread.currentThread().name}  start")
+        try {
+            withContext(Dispatchers.IO) {
+                val value = 100 / 0
+            }
+        } catch (e: Exception) {
+            println("---->>   :${e.message}")
+        }
+        println("---->>   :${Thread.currentThread().name}  end")
+    }
+    */
+
+    // 不可捕获异常
+    // launch启动的协程是独立于调用它的协程之外的一个新的协程，它没有直接的上级协程来捕获它的异常，因此try-catch在协程外部捕获不到协程中的异常。
+    //  事实证明，只要是launch的协程，无论是子协程还是根协程，都无法被捕获
+    /*
+    try {
+        launch {
+            println("---->>   :${Thread.currentThread().name}  start")
+            val value = 100 / 0
+            println("---->>   :${Thread.currentThread().name}  end")
+        }
+    } catch (e: Exception) {
+        println("---->>   Catch exception : ${e.message}")
+    }
+
+    try {
+         val deffer = async {
+             val value = 100 / 0
+         }
+     } catch (e: Exception) {
+         println("---->>   Catch exception : ${e.message}")
+     }
+     */
+
+    //可捕获异常
+    val deffer = async {
+        try {
+            val value = 100 / 0
+        } catch (e: Exception) {
+            println("---->>   Catch exception : ${e.message}")
+        }
+    }
+}
+
+/**
+ * Android全局异常处理
+ *  GlobalCoroutineExceptionHandler
+ */
+/*
+ *
+ * 1、时机：异常是被自动抛出异常的协程所抛出，使用 launch，而不是 async 时；
+ * 2、位置：在CoroutineScope的CoroutineContext中或在一个根协程
+ *     （CoroutineScope 或者 SupervisorScope 的直接子协程）中。
+ */
+fun testCapture() = runBlocking<Unit> {
+    val scope = CoroutineScope(Dispatchers.Default + exceptionHandler)
+    val job = scope.launch {
+        val value = 100 / 0
+    }
+    val deferred = scope.async {
+        throw RuntimeException("async exception")
+    }
+    job.join()
+    deferred.await()
+}
+
+
+fun testCaptureN() = runBlocking {
     val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
         println("exception:${exception.message} == ${exception.suppressed.contentToString()}")
     }
@@ -41,58 +178,6 @@ fun testCaptureN() = runBlocking<Unit> {
         }
     }
     job.join()
-}
-
-
-/**
- * Android全局异常处理
- *  GlobalCoroutineExceptionHandler
- */
-
-/*
- *
- * 1、时机：异常是被自动抛出异常的协程所抛出，使用 launch，而不是 async 时；
- * 2、位置：在CoroutineScope的CoroutineContext中或在一个根协程
- *     （CoroutineScope 或者 SupervisorScope 的直接子协程）中。
- */
-fun testCapture() = runBlocking<Unit> {
-    val scope = CoroutineScope(Dispatchers.Default + exceptionHandler)
-    val job = scope.launch {
-        throw RuntimeException("launch exception")
-    }
-    val deferred = scope.async {
-        throw RuntimeException("async exception")
-    }
-    job.join()
-    deferred.await()
-}
-
-/**
- * CoroutineExceptionHandler 不能安装在内部协程，只能安装在最外层协程中
- * 像这样的代码，异常是无法被 CoroutineExceptionHandler 捕获的
- */
-fun testCapture1() = runBlocking<Unit> {
-    val scope1 = CoroutineScope(Dispatchers.Default)
-    val job1 = scope1.launch {
-        launch(exceptionHandler) {
-            throw RuntimeException("launch exception")
-        }
-    }
-    job1.join()
-}
-
-
-/*
-1、Job：控制协程的生命周期
-2、CoroutineDispatcher：向合适的线程分发任务
-3、CoroutineName：协程的名称
-4、CoroutineExceptionHandler：处理被捕获的异常
-*/
-fun testCoroutine() = runBlocking<Unit> {
-    val scope = CoroutineScope(Job() + Dispatchers.Default + CoroutineName("Name") + exceptionHandler)
-    val job = scope.launch {
-        println("----     ${Thread.currentThread().name}   ")
-    }
 }
 
 

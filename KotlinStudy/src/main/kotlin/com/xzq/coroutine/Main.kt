@@ -21,7 +21,7 @@ private fun testException4() = runBlocking<Unit> {
     }
 }
 
-private fun testException3() = runBlocking<Unit> {
+private fun testException3() = runBlocking {
     val handler = CoroutineExceptionHandler { _, exception ->
         println("Caught $exception   ${exception.suppressed.contentToString()}")
     }

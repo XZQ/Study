@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.flow
 import kotlin.system.measureTimeMillis
 
 fun main(args: Array<String>) {
+
 }
 
 fun testFlow() {
