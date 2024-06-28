@@ -1,12 +1,7 @@
-package com.xzq.java.string;
+package com.xzq.xzq
 
-/**
- * @CreateTime : 2022/8/15 10:16 上午
- * @Author : yijin.yi
- * @Description :
- */
+
 class AvailableTime {
-    var week: String = ""
     var date: Long = 0
 
     var dayOfWeek: Int = 0
@@ -19,15 +14,16 @@ class AvailableTime {
 
     var hourName: String? = ""
 
+    var hour: Long = 0
+
+    var available: Boolean = false
+
     override fun toString(): String {
-        return "AvailableTime(date=$date, dayOfWeek=$dayOfWeek, isFull=$isFull, times=$times, monthName=$monthName, hourName=$hourName)"
+        return "AvailableTime(date=$date, times=${times?.size}, hour=${TimeUtils.format.format(hour * 1000)} )"
     }
-
-
 }
 
 class TimeItem {
-
     // 每半小时整点的10位时间戳
     var time: Long = 0
 
@@ -39,25 +35,33 @@ class TimeItem {
 
     //  为time 转换为后 应该显示的 文本
     var showText: String = ""
-//
-//    override fun toString(): String {
-//        return "TimeItem(time=$time, available=$available, resourceType=$resourceType, showText='$showText')"
-//    }
+
+    override fun toString(): String {
+        return "TimeItem(time=${TimeUtils.format.format(time)}     time=$time, available=$available,   showText='$showText')"
+    }
+
 
 }
 
 class DriverAvailableTime {
     var time: Long = 0
 
-    var date: String = ""
-
-    //"日", "一", "二", "三", "四", "五", "六"
-    var dayOfWeek: String = ""
+    var date: Long = 0L
 
     var availableTimeList: List<AvailableTime>? = null
 
     //  为time 转换为后 应该显示的 文本
     var showText: String = ""
 
-    var isSelect: kotlin.Boolean = false
+    var dayOfWeek: Int = 0
+
+    var available: Boolean = false
+
+    override fun toString(): String {
+        return "TimeItem(time=${TimeUtils.format.format(date)},  date=$date , availableTimeList=${availableTimeList?.size})"
+    }
+
 }
+
+
+

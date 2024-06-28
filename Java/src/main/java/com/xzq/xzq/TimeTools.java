@@ -1,13 +1,7 @@
 package com.xzq.xzq;
 
-import com.xzq.java.string.AvailableTime;
-import com.xzq.java.string.DriverAvailableTime;
-import com.xzq.java.string.TimeItem;
-import com.xzq.time.TimeUtils;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -19,43 +13,50 @@ import java.util.List;
  */
 public class TimeTools {
 
-
     /**
      * 生成服务时间列表
      */
     public synchronized static List<DriverAvailableTime> getAvailableTimeList(int intervalMinutes, int minMinutes, int maxMinutes) {
-        // System.out.println("---------------------------------------  intervalMinutes=" + intervalMinutes + "   minMinutes=" + minMinutes + "   maxMinutes=" + maxMinutes);
+
         List<DriverAvailableTime> driverList = new ArrayList<>();
-        int hourOfDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        int startTime = hourOfDay + (minMinutes / 60);
+
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTime(new Date(System.currentTimeMillis() + minMinutes * 60 * 1000L));
+
+        int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+
+        int startTime = hourOfDay  ;
         int endTime = hourOfDay + (maxMinutes / 60);
+
+        System.out.println("----      hourOfDay " + hourOfDay + "   startTime=" + startTime + "   endTime=" + endTime);
+
         // 1、所有所有列表
         List<TimeItem> allList = new ArrayList<>();
 
         //2、处理小时跨时情况
-        Calendar cal = Calendar.getInstance();
-        int currentmMinute = cal.get(Calendar.MINUTE);
+        int currentmMinute = calendar.get(Calendar.MINUTE);
         boolean isNextHour = false;
 
-        System.out.println("currentmMinute=" + currentmMinute + "    isNextHour=" + isNextHour + "    minMinutes=" + minMinutes + "    intervalMinutes=" + intervalMinutes + "   startTime=" + startTime + "    endTime=" + endTime);
-        if (currentmMinute + intervalMinutes >= 60 || getMinuteUnit(currentmMinute + intervalMinutes) == 0) {
+        // if (currentmMinute + intervalMinutes >= 60 || getMinuteUnit(currentmMinute + intervalMinutes) == 0) {
+        if (currentmMinute + intervalMinutes > 60) {
             startTime = startTime + 1;
             isNextHour = true;
         }
+        System.out.println("----      currentmMinute=" + currentmMinute + "    isNextHour=" + isNextHour + "    minMinutes=" + minMinutes + "    intervalMinutes=" + intervalMinutes + "   startTime=" + startTime + "    endTime=" + endTime);
 
-        System.out.println("currentmMinute=" + currentmMinute + "    isNextHour=" + isNextHour + "    minMinutes=" + minMinutes + "    intervalMinutes=" + intervalMinutes + "   startTime=" + startTime + "    endTime=" + endTime);
-        int delayTime = getDelayTime(currentmMinute, isNextHour, minMinutes, intervalMinutes);
-
-        System.out.println("startTime=" + startTime + "    endTime=" + endTime);
-
+        int delayTime = getDelayTime(currentmMinute, isNextHour, intervalMinutes);
 
         //2、生成所有时间
         for (int i = startTime; i < endTime; i++) {
             long hourTime = getHourTime(i);
-            System.out.println("   " + TimeUtils.format.format(hourTime) + "   " + i + "   " + startTime);
-
+//            System.out.println("----      " + TimeUtils.format.format(hourTime) + "   " + i + "   " + startTime);
             if (i == startTime) {
-                allList.addAll(getTimeList(hourTime, false, delayTime, intervalMinutes));
+                if (delayTime >= 10) {
+                    allList.addAll(getTimeList(hourTime, true, delayTime, intervalMinutes));
+                } else {
+                    allList.addAll(getTimeList(hourTime, false, 0, intervalMinutes));
+                }
             } else {
                 allList.addAll(getTimeList(hourTime, false, 0, intervalMinutes));
             }
@@ -70,10 +71,6 @@ public class TimeTools {
                 spilt.add(i);
             }
         }
-
-        System.out.println();
-        System.out.println();
-
 
         // 4、说明时间没有跨天，直接处理返回即可
         if (spilt.size() <= 1) {
@@ -100,10 +97,61 @@ public class TimeTools {
                 int toIndex = spilt.get(right);
                 List<TimeItem> tmpList = allList.subList(fromIndex, toIndex);
                 long date = allList.get(fromIndex).getTime();
-                driverList.add(getDriverAvailableTime(date, tmpList));
+                driverList.add(getDriverAvailableTime1(fromIndex, date, tmpList));
             }
         }
+//        for (DriverAvailableTime time1 : driverList) {
+//            Log.e("TAG", "----        121 " + time1.getAvailableTimeList().size()+"  " + TimeUtils.format.format(time1.getTime()));
+//            for (AvailableTime availableTime : time1.getAvailableTimeList()) {
+//                Log.e("TAG", "----             123 " + availableTime.getTimes().size()+"  " +  TimeUtils.format.format(availableTime.getDate()));
+//                for (TimeItem timeItem : availableTime.getTimes()) {
+//                    Log.e("TAG", "----                 125 " + timeItem.getShowText()+"  " +  TimeUtils.format.format(timeItem.getTime()));
+//                }
+//            }
+//        }
         return driverList;
+    }
+
+
+    /***
+     * 是否跨时的 下一个时间的分钟数处理
+     */
+    private static int getDelayTime(int curmMinute, boolean isNextHour, int intervalMinutes) {
+        // 当前时间+最小时间，到达了下个小时
+        if (isNextHour) {
+            int total = curmMinute + intervalMinutes;
+            int curUnit = getMinuteUnit(total - 60);
+            return Math.max(curUnit, intervalMinutes);
+        }
+        // 当前时间+最小时间，在一个小时内
+        else {
+            return getMinuteUnit(curmMinute);
+        }
+    }
+
+    private static DriverAvailableTime getDriverAvailableTime1(int fromIndex, long time, List<TimeItem> subList) {
+        // 非常非常非常特殊的情况，
+        if (fromIndex == 0 && Objects.equals(TimeUtils.format_HH.format(time), "23")) {
+            DriverAvailableTime driverTime = new DriverAvailableTime();
+            driverTime.setTime(time);
+            driverTime.setShowText(TimeUtils.format_Md.format(time));
+
+            List<AvailableTime> availableTimeList = new ArrayList<>();
+            AvailableTime availableTime = new AvailableTime();
+            availableTime.setDate(time);
+            availableTime.setTimes(subList);
+            availableTimeList.add(availableTime);
+
+            driverTime.setAvailableTimeList(availableTimeList);
+
+            return driverTime;
+        } else {
+            DriverAvailableTime driverTime = new DriverAvailableTime();
+            driverTime.setTime(time);
+            driverTime.setShowText(TimeUtils.format_Md.format(time));
+            driverTime.setAvailableTimeList(getListFromUnit(":00:00", subList));
+            return driverTime;
+        }
     }
 
     /***
@@ -112,25 +160,9 @@ public class TimeTools {
     private static DriverAvailableTime getDriverAvailableTime(long time, List<TimeItem> subList) {
         DriverAvailableTime driverTime = new DriverAvailableTime();
         driverTime.setTime(time);
-        driverTime.setShowText(TimeUtils.formatM.format(time));
+        driverTime.setShowText(TimeUtils.format_Md.format(time));
         driverTime.setAvailableTimeList(getListFromUnit(":00:00", subList));
         return driverTime;
-    }
-
-    /***
-     * 是否跨时的 下一个时间的分钟数处理
-     */
-    private static int getDelayTime(int curmMinute, boolean isTmo, int minMinutes, int intervalMinutes) {
-        // 当前时间+最小时间，到达了下个小时
-        if (isTmo) {
-            int total = curmMinute + minMinutes;
-            int curUnit = getMinuteUnit(total - 60);
-            return Math.max(curUnit, intervalMinutes);
-        }
-        // 当前时间+最小时间，在一个小时内
-        else {
-            return getMinuteUnit(curmMinute) + minMinutes;
-        }
     }
 
     private static List<AvailableTime> getListFromUnit(String unit, List<TimeItem> subList) {
@@ -157,8 +189,8 @@ public class TimeTools {
             availableTime.setDate(date);
             availableTime.setTimes(tmpList);
             //availableTime.setDayOfWeek(getDayOfWeek(date));
-            availableTime.setHourName(TimeUtils.formatHH.format(date));
-            //availableTime.setFull(false);
+            availableTime.setHourName(TimeUtils.format_HH.format(date));
+            availableTime.setFull(false);
             availableTimeList.add(availableTime);
         }
         return availableTimeList;
@@ -170,16 +202,17 @@ public class TimeTools {
     private static List<TimeItem> getTimeList(long date, boolean filter, int delayTime, int intervalMinutes) {
         List<TimeItem> times = new ArrayList<>();
         int unit = getMinuteUnit(intervalMinutes);
-
-        System.out.println("unit=" + unit);
-
         int i = 0;
         while (i < 60) {
             TimeItem item = new TimeItem();
             long time = date + i * 60L * 1000;
             item.setTime(time);
             item.setAvailable(true);
-            item.setShowText(String.valueOf(i));
+            String value = String.valueOf(i);
+            if (value.equals("0")) {
+                value = "00";
+            }
+            item.setShowText(value);
             i += unit;
             if (filter) {
                 if (i > delayTime) {
@@ -189,11 +222,6 @@ public class TimeTools {
                 times.add(item);
             }
         }
-
-        for (TimeItem time : times) {
-            System.out.println("time=" + TimeUtils.format.format(time.getTime()));
-        }
-
         return times;
     }
 

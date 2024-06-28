@@ -24,8 +24,8 @@ dependencies {
 //    testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation "cglib:cglib:3.3.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
 }
 
 test {
