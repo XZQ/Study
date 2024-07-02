@@ -1,17 +1,22 @@
 package com.xzq.function
 
 fun main() {
-//    makeTest {
-//        println("makeTest")
-//    }
-//    fun1({
-//        println("doSometghins1")
-//    }, {
-//        println("doSometghins2")
-//    })
-
-    mainFun()
+    foo {
+        println("---->>      00000")
+    }
 }
+// https://juejin.cn/post/7374692921633505317?utm_source=gold_browser_extension
+inline fun foo(body: () -> Unit) {
+ ordinaryFunction(body)
+//    println("---->>      1111")
+}
+
+inline fun ordinaryFunction(block: () -> Unit) {
+    println("---->>      2222")
+    println("---->>      00000")
+    println("---->>      3333")
+}
+
 
 //调用
 fun mainFun() {

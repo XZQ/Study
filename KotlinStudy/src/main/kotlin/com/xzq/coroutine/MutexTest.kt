@@ -2,10 +2,70 @@ package com.xzq.coroutine
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 fun main() {
-    testSynchronized()
+    val ina: Int = 0x38
+    println(ina)
+    // ITEM_LEFT_IMAGE_CARD
 }
+
+fun testMutex1() = runBlocking {
+    val mutex = Mutex()
+    var counter = 0
+    val jobs: MutableList<Job> = mutableListOf()
+    repeat(10) {
+        val job = launch(Dispatchers.Default) {
+            repeat(1000) {
+                mutex.withLock {
+                    counter++
+                }
+
+                /*  mutex.lock() // 等待并获取锁
+                  try {
+                      // 保护的代码段
+                      println("Locked by coroutine 2")
+                  } finally {
+                      mutex.unlock() // 确保释放锁
+                  }*/
+
+                /* if (mutex.tryLock()) { // 尝试获取锁
+                     try {
+                         println("Lock acquired by coroutine 1")
+                         delay(1000)
+                     } finally {
+                         mutex.unlock()
+                     }
+                 } else {
+                     println("Coroutine 1: Lock not acquired")
+                 }*/
+            }
+        }
+        jobs.add(job)
+    }
+    jobs.joinAll()
+    println("counter = $counter")
+}
+
+fun testSynchronized1() = runBlocking {
+    var counter = 0
+    val lock = Any()
+    val jobs: MutableList<Job> = mutableListOf()
+    repeat(10) {
+        val job = launch(Dispatchers.Default) {
+            repeat(1000) {
+                synchronized(lock) {
+                    counter++
+                }
+            }
+        }
+        jobs.add(job)
+    }
+
+    jobs.forEach { it.join() }
+    println("counter = $counter")
+}
+
 
 fun suspendCancellableCoroutineTest() {
     return suspendCancellableCoroutineTest()
