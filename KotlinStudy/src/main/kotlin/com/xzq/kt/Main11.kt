@@ -1,13 +1,21 @@
 package com.xzq.kt
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.flow
+import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.system.measureTimeMillis
 
 fun main(args: Array<String>) {
-
+    testCopy()
 }
+
+fun testCopy() {
+    val list = CopyOnWriteArrayList<String>()
+    for (s in 0 until 5) {
+        list.add(s.toString())
+    }
+}
+
 
 fun testFlow() {
 

@@ -25,23 +25,25 @@ fun main() {
 //    Thread.sleep(2 * 60 * 1000L)
 
 
-    val dataList = listOf(11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 10, 20, 30, 40, 50, 60, 70, 80, 90)
-    val time = measureTimeMillis {
-        // 按顺序来处理
-        dataList.forEach {
-            processingData(it)
-        }
-    }
-    println("Executed in $time ms")
+//    val dataList = listOf(11, 22, 33, 44, 55, 66, 77, 88, 99, 100, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+//    val time = measureTimeMillis {
+//        // 按顺序来处理
+//        dataList.forEach {
+//            processingData(it)
+//        }
+//    }
+//    println("Executed in $time ms")
+//
+//    runBlocking {
+//        val time2 = measureTimeMillis {
+//            dataList.parallelProcessing(10) {
+//                processingData(it)
+//            }
+//        }
+//        println("Exec total time >> $time2")
+//    }
 
-    runBlocking {
-        val time2 = measureTimeMillis {
-            dataList.parallelProcessing(10) {
-                processingData(it)
-            }
-        }
-        println("Exec total time >> $time2")
-    }
+    testAsync()
 }
 
 // https://juejin.cn/post/7377662459920891941?utm_source=gold_browser_extension
@@ -144,32 +146,23 @@ fun testBroadcastChannel() = runBlocking {
     }
 }
 
-
-fun testChannel() = runBlocking {
-    val channel = Channel<Int>()
-
-    launch {
-        for (i in 1..5) {
-            delay(1000L)
-            channel.send(i)
-        }
-        channel.close()
-    }
-
-    launch {
-        for (value in channel) {
-            println("value=$value")
-        }
-    }
-}
-
 fun testAsync() = runBlocking {
     val time = measureTimeMillis {
         val one = async { doSomethingUsefulOne() }
         val two = async { doSomethingUsefulTwo() }
         println("The result is ${one.await() + two.await()}")
     }
+
     println("Completed in $time ms")
+
+    val time1 = measureTimeMillis {
+        val deferred = listOf(
+            async { doSomethingUsefulOne() },
+            async { doSomethingUsefulTwo() }
+        )
+        deferred.awaitAll()
+    }
+    println("Completed in $time1 ms")
 }
 
 
