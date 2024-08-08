@@ -345,6 +345,30 @@ datastruct/algotithm/Algorithm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.s
 .PHONY : datastruct/algotithm/Algorithm.cpp.s
 
+datastruct/algotithm/Student1.o: datastruct/algotithm/Student1.cpp.o
+.PHONY : datastruct/algotithm/Student1.o
+
+# target to build an object file
+datastruct/algotithm/Student1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o
+.PHONY : datastruct/algotithm/Student1.cpp.o
+
+datastruct/algotithm/Student1.i: datastruct/algotithm/Student1.cpp.i
+.PHONY : datastruct/algotithm/Student1.i
+
+# target to preprocess a source file
+datastruct/algotithm/Student1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.i
+.PHONY : datastruct/algotithm/Student1.cpp.i
+
+datastruct/algotithm/Student1.s: datastruct/algotithm/Student1.cpp.s
+.PHONY : datastruct/algotithm/Student1.s
+
+# target to generate assembly for a file
+datastruct/algotithm/Student1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.s
+.PHONY : datastruct/algotithm/Student1.cpp.s
+
 destruct/ObjTest.o: destruct/ObjTest.cpp.o
 .PHONY : destruct/ObjTest.o
 
@@ -597,6 +621,9 @@ help:
 	@echo "... datastruct/algotithm/Algorithm.o"
 	@echo "... datastruct/algotithm/Algorithm.i"
 	@echo "... datastruct/algotithm/Algorithm.s"
+	@echo "... datastruct/algotithm/Student1.o"
+	@echo "... datastruct/algotithm/Student1.i"
+	@echo "... datastruct/algotithm/Student1.s"
 	@echo "... destruct/ObjTest.o"
 	@echo "... destruct/ObjTest.i"
 	@echo "... destruct/ObjTest.s"

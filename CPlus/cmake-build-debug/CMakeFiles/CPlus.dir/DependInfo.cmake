@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Student.cpp" "CMakeFiles/CPlus.dir/base/Student.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/Student.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/Solution.cpp" "CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Algorithm.cpp" "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o.d"
+  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Student1.cpp" "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/destruct/ObjTest.cpp" "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/extendsPolymorphic/Base.cpp" "CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.o" "gcc" "CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/extendsPolymorphic/Derived.cpp" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.o" "gcc" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.o.d"

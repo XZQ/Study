@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o.d"
   "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o"
   "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o.d"
+  "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o"
+  "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o.d"
   "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o"
   "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o.d"
   "CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.o"

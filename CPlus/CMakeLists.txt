@@ -25,4 +25,6 @@ add_executable(CPlus
         datastruct/Solution.cpp
         datastruct/algotithm/Algorithm.cpp
         datastruct/algotithm/Algorithm.h
-  )
+        datastruct/algotithm/Student1.cpp
+        datastruct/algotithm/Student1.h
+)

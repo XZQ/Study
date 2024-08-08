@@ -31,4 +31,15 @@ void swap2(int &a, int &b);
 
 void swap3(int *a, int *b);
 
+
+void swapValue(int a, int b);
+
+void swapRef(int &a, int &b);
+
+void swapAddress(int *a, int *b);
+
+void testStu();
+
+void test();
+
 #endif //CPLUS_ALGORITHM_H

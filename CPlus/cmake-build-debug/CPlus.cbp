@@ -127,6 +127,12 @@
 		<Unit filename="/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Algorithm.h">
 			<Option target="CPlus"/>
 		</Unit>
+		<Unit filename="/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Student1.cpp">
+			<Option target="CPlus"/>
+		</Unit>
+		<Unit filename="/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Student1.h">
+			<Option target="CPlus"/>
+		</Unit>
 		<Unit filename="/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/destruct/ObjTest.cpp">
 			<Option target="CPlus"/>
 		</Unit>

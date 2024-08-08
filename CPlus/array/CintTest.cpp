@@ -21,17 +21,17 @@ private:
     string sex = "男";
 };
 
-class Student : public People {
-public:
-    void show_1() {
-        cout << "身高：\t" << height << endl;
-        cout << "成绩：\t" << score << endl;
-    }
-
-private:
-    float height = 175;
-    float score = 99.8;
-};
+//class Student : public People {
+//public:
+//    void show_1() {
+//        cout << "身高：\t" << height << endl;
+//        cout << "成绩：\t" << score << endl;
+//    }
+//
+//private:
+//    float height = 175;
+//    float score = 99.8;
+//};
 
 void openFile() {
     ofstream outFile;

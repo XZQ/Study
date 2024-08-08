@@ -3,22 +3,48 @@ package com.xzq.coroutine
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.concurrent.Executors
 
 
 fun main() {
-    GlobalScope.launch(Dispatchers.IO) {
-        launch {
-            // 1、异步上传录音
-            println("----->>     ${System.currentTimeMillis()}")
-        }
-        launch {
-            // 2、异步加载驾享初始化接口数据
-            println("----->>     ${System.currentTimeMillis()}")
-        }
-    }
+//    GlobalScope.launch(Dispatchers.IO) {
+//        launch {
+//            // 1、异步上传录音
+//            println("----->>     ${System.currentTimeMillis()}")
+//        }
+//        launch {
+//            // 2、异步加载驾享初始化接口数据
+//            println("----->>     ${System.currentTimeMillis()}")
+//        }
+//    }
+//
+//    Thread.sleep(2000)
 
-    Thread.sleep(2000)
+    val format_mm = SimpleDateFormat("mm", Locale.getDefault())
+    val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+
+    val target= 1722415200000L
+    val curTime = 1722408017623L // System.currentTimeMillis()
+
+    val minuteCur = format_mm.format(curTime)
+    val minuteTarget = format_mm.format(target)
+
+    val intervalMinutes = (10 * 60 * 1000L)
+    val minAdvance = (2 * 60 * 60 * 1000L)
+
+    if (((minuteCur.toInt() % 10) == 0) || minuteCur >= minuteTarget) {
+        var result = target
+        if (curTime + minAdvance > target) {
+            result += intervalMinutes
+        }
+        println(
+            "---->>      curTime=$curTime==${format.format(curTime)}    result=$result==${format.format(result)}    target=$target==${format.format(target)}"
+        )
+    } else {
+        println("---->>     42    curTime=$curTime       ${format.format(curTime)}   ||   target=$target     ${format.format(target)}")
+    }
 
 }
 

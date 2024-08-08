@@ -2,7 +2,7 @@
 // Created by Xia on 2022/7/25.
 //
 
-#ifndef CPLUS_STUDENT_H
+#ifndef CPLUS_STUDENT1_H
 #define CPLUS_STUDENT_H
 
 //https://juejin.cn/post/7017983182003765284
@@ -60,4 +60,4 @@ public:
 };
 
 
-#endif //CPLUS_STUDENT_H
+#endif //CPLUS_STUDENT1_H
