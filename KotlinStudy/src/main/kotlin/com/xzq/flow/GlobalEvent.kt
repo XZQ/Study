@@ -26,7 +26,7 @@ fun main() {
             localRequest.onAwait { Response(it, true) }
             remoteRequest.onAwait { Response(it, false) }
         }
-        userResponse.value?.let { println(it) }
+        println(userResponse.value)
     }
 
 }

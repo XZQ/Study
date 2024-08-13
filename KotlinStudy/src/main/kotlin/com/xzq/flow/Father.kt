@@ -24,4 +24,6 @@ data class Bean(
     var service_code: String? = null,
     var isSelect: Boolean = false
 )
+
+
 data class Response11<T>(val value: T, val isLocal: Boolean)
