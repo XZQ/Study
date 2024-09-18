@@ -11,14 +11,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/array/CintTest.cpp" "CMakeFiles/CPlus.dir/array/CintTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/array/CintTest.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Construction.cpp" "CMakeFiles/CPlus.dir/base/Construction.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/Construction.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Date.cpp" "CMakeFiles/CPlus.dir/base/Date.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/Date.cpp.o.d"
-  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/FunPoint.cpp" "CMakeFiles/CPlus.dir/base/FunPoint.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/FunPoint.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/MyTeacher.cpp" "CMakeFiles/CPlus.dir/base/MyTeacher.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/MyTeacher.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Person.cpp" "CMakeFiles/CPlus.dir/base/Person.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/Person.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/Student.cpp" "CMakeFiles/CPlus.dir/base/Student.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/Student.cpp.o.d"
+  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/newbase.cpp" "CMakeFiles/CPlus.dir/base/newbase.cpp.o" "gcc" "CMakeFiles/CPlus.dir/base/newbase.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/Solution.cpp" "CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Algorithm.cpp" "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/algotithm/Student1.cpp" "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o.d"
-  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/destruct/ObjTest.cpp" "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/destruct/ObjTest.cpp.o.d"
+  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/datastruct/typeconversion/TypeConver.cpp" "CMakeFiles/CPlus.dir/datastruct/typeconversion/TypeConver.cpp.o" "gcc" "CMakeFiles/CPlus.dir/datastruct/typeconversion/TypeConver.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/extendsPolymorphic/Base.cpp" "CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.o" "gcc" "CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/extendsPolymorphic/Derived.cpp" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.o" "gcc" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/extendsPolymorphic/Derived2.cpp" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.o" "gcc" "CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.o.d"
@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/ptr/PtrTest.cpp" "CMakeFiles/CPlus.dir/ptr/PtrTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/ptr/PtrTest.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/ptr/SmallSmartPtr.cpp" "CMakeFiles/CPlus.dir/ptr/SmallSmartPtr.cpp.o" "gcc" "CMakeFiles/CPlus.dir/ptr/SmallSmartPtr.cpp.o.d"
   "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/templates/TemplateTest.cpp" "CMakeFiles/CPlus.dir/templates/TemplateTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/templates/TemplateTest.cpp.o.d"
+  "/Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/thread/threadTest.cpp" "CMakeFiles/CPlus.dir/thread/threadTest.cpp.o" "gcc" "CMakeFiles/CPlus.dir/thread/threadTest.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

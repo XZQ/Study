@@ -1,6 +1,10 @@
 package com.xzq.collections
 
 import com.xzq.flow.Bean
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -30,5 +34,11 @@ object JavaTest {
         // 使用 Base64 编码器对字符串进行编码
         val encoder: Base64.Encoder = Base64.getEncoder()
         val encoded: String = encoder.encodeToString(string.toByteArray())
+    }
+
+
+    suspend fun fetchData(): String = withContext(Dispatchers.IO) {
+        delay(1000L)
+        ""
     }
 }

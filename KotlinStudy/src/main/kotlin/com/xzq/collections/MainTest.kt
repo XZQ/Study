@@ -8,6 +8,7 @@ fun main() {
     val bean3 = CollectBean("3", "IBM", false)
     val bean4 = CollectBean("4", "NIO", false)
     val list = mutableListOf(bean1, bean2, bean3, bean4)
+
 }
 
 data class CollectBean(

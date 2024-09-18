@@ -5,7 +5,36 @@ import kotlinx.coroutines.flow.*
 
 // https://juejin.cn/post/7401042923490525184?utm_source=gold_browser_extension
 fun main(args: Array<String>) {
-    testConflate1()
+    testConflate2()
+}
+
+@OptIn(FlowPreview::class)
+fun testConflate2() = runBlocking {
+    launch {
+        userInput().debounce(200).collect {
+            println("---->>                 ${Thread.currentThread().name}.    ${it}")
+        }
+    }
+}
+
+
+@OptIn(FlowPreview::class)
+fun testDebounce1() = runBlocking {
+    val result = userInput().debounce(150).collect {
+        println("---->>                 ${Thread.currentThread().name}.    ${it}")
+    }
+}
+
+fun userInput() = flow {
+    emit("A")
+    delay(100)
+    emit("AB")
+    delay(150)
+    emit("ABC")
+    delay(200)
+    emit("ABCD")
+    delay(100)
+    emit("ABCDE")
 }
 
 
@@ -17,11 +46,10 @@ fun testConflate1() = runBlocking {
         }
     }
 
-    flow.conflate()
-        .collect { value ->
-            delay(300) // 模拟消费者速度
-            println(value)
-        }
+    flow.conflate().collect { value ->
+        delay(2000) // 模拟消费者速度
+        println(value)
+    }
 
 }
 
@@ -34,11 +62,10 @@ fun testBuffer() = runBlocking {
         }
     }
 
-    flow.buffer(2)
-        .collect { value ->
-            delay(300) // 模拟消费者速度
-            println(value)
-        }
+    flow.buffer(2).collect { value ->
+        delay(300) // 模拟消费者速度
+        println(value)
+    }
 
 }
 

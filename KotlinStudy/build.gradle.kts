@@ -21,6 +21,8 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
     implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.squareup.okio:okio:3.9.0")
+
 }
 
 tasks.test {

@@ -11,10 +11,10 @@ using namespace std;
 
 // 正确性，易读性，健壮性，高效性
 
-int main() {
-    testStu();
-    return 0;
-}
+//int main() {
+//    testStu();
+//    return 0;
+//}
 
 void testStu() {
     //栈空间开辟 的对象

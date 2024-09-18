@@ -6,26 +6,18 @@ import kotlinx.coroutines.sync.withLock
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Executors
+import kotlin.properties.Delegates
 
+
+var a by Delegates.notNull<Int>()
 
 fun main() {
-//    GlobalScope.launch(Dispatchers.IO) {
-//        launch {
-//            // 1、异步上传录音
-//            println("----->>     ${System.currentTimeMillis()}")
-//        }
-//        launch {
-//            // 2、异步加载驾享初始化接口数据
-//            println("----->>     ${System.currentTimeMillis()}")
-//        }
-//    }
-//
-//    Thread.sleep(2000)
+
 
     val format_mm = SimpleDateFormat("mm", Locale.getDefault())
     val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
-    val target= 1722415200000L
+    val target = 1722415200000L
     val curTime = 1722408017623L // System.currentTimeMillis()
 
     val minuteCur = format_mm.format(curTime)

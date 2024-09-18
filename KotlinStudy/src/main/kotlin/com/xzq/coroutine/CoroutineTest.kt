@@ -43,7 +43,9 @@ fun main() {
 //        println("Exec total time >> $time2")
 //    }
 
-    testAsync()
+//    testAsync()
+
+
 }
 
 // https://juejin.cn/post/7377662459920891941?utm_source=gold_browser_extension

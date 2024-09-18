@@ -22,7 +22,7 @@ fun main() {
     //  flowMerge()
     //  flowFlattten()
     //  flowFlatMapConcat()
-    // flowCollect()
+    //  flowCollect()
 
 
 }

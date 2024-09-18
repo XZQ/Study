@@ -8,12 +8,14 @@ import java.io.File;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.Consumer;
 
 // https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/solution/gong-shui-san-xie-guan-yu-shan-chu-you-x-glnq/
 public class Test {
 
 
     public static void main(String[] args) {
+        setRange(1, 8, 1);
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 hh:mm:ss");
 //        LocalDateTime now = LocalDateTime.now();
 //        String str1 = formatter.format(now);
@@ -85,8 +87,27 @@ public class Test {
 //        List<int[]> list1 = Arrays.asList(ints);
 //        System.out.println(list1.size());
 //        files();
-        System.out.println("sss");
+
     }
+
+    public static void setRange(int min, int max, int step) {
+        int minValue = Math.min(min, max);
+        int maxValue = Math.max(min, max);
+        // 指定初始容量，避免OutOfMemory
+        int capacity = (maxValue - minValue) / step;
+        List<Integer> data = new ArrayList<>(capacity);
+        for (int i = minValue; i <= maxValue; i = i + step) {
+            data.add(i);
+        }
+
+        data.stream().forEach(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                System.out.println("---->>         " + integer);
+            }
+        });
+    }
+
 
     static void files() {
         ExecutorService servicee = Executors.newCachedThreadPool();
