@@ -17,11 +17,9 @@ add_executable(CPlus
         memory/main.cpp memory/main.h
         array/CintTest.cpp
         main.cpp
-        datastruct/Solution.cpp
         datastruct/algotithm/Algorithm.cpp
         datastruct/algotithm/Algorithm.h
-        datastruct/typeconversion/TypeConver.cpp
-        datastruct/typeconversion/TypeConver.h
         thread/threadTest.cpp
         base/newbase.cpp
+        thread/threadTest.h
 )

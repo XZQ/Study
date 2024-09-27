@@ -1,7 +1,5 @@
 #include <iostream>
 #include "base/MyTeacher.h"
-#include "base/Construction.h"
-#include "base/Date.h"
 #include "base/Student.h"
 // https://www.jianshu.com/p/81f876353c53
 using namespace std;
@@ -31,39 +29,8 @@ void testMyTeacher1() {
 
 
 //https://www.jianshu.com/p/bb6b252a94d0
-void testConstruction() {
-    //1. 括号法
-    Construction c1(1);
-//    Construction c2(2, 3);
-
-    //2. 等号法,只用于调用单个参数的构造函数(编译器自动调用的构造函数)
-//    Construction t3 = (4, 5, 6, 7, 8);// C++对"=" 功能增强，这里调用了单个参数构造函数,取值以最后一个,的值为准
-//    Construction t4 = 9;//这里是不是把9赋值给t4;,不是的，这里调用了Construction的构造函数
-
-    //3. 直接调用构造函数 (手动调用的构造函数)
-    Construction c5 = Construction(5, 6);
-
-    //==========================================================================================//
-    //c1 = c5;       //把 c5 copy给 c1 ,对象的赋值操作,这里不是调用构造函数(属于对象的赋值)
-    Construction c6 = c5; //这里是调用了拷贝构造函数(属于对象的初始化)
-    Construction c7(c5);  //这里是调用了拷贝构造函数(属于对象的初始化)
-}
 
 // https://blog.csdn.net/m0_54850825/article/details/124873838
-void testDate() {
-    Date d1;
-    d1.print();
-
-    Date d2(2022, 5, 15);    //含参写法，全缺省函数传3个参数可以
-    d2.print();
-
-    Date d3(2022);    //全缺省函数传1个参数可以
-    d3.print();
-
-    Date d4(2022, 10);    //全缺省函数传2个参数可以
-    d4.print();
-
-}
 
 void testObj() {
     cout << "new delete基本语法" << endl;

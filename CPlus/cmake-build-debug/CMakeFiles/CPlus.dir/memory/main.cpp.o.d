@@ -1,6 +1,5 @@
-CMakeFiles/CPlus.dir/base/FunPoint.cpp.o: \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/FunPoint.cpp \
-  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/base/FunPoint.h \
+CMakeFiles/CPlus.dir/memory/main.cpp.o: \
+  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/memory/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
@@ -823,4 +822,5 @@ CMakeFiles/CPlus.dir/base/FunPoint.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg \
+  /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/memory/Main.h

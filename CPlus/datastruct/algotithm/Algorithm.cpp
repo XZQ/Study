@@ -5,7 +5,6 @@
 #include "Algorithm.h"
 #include <iostream>
 #include <cstring>
-#include "Student1.h"
 
 using namespace std;
 
@@ -25,12 +24,12 @@ void testStu() {
 //    stu1.setName((char *) "夏洛");
 //    cout << stu1.getName() << " " << stu1.getAge() << endl;
 
-    auto *student1 = new Student1();
-    student1->setName((char *) "马冬梅");
-    student1->setAge(18);
-    cout << student1->getName() << " " << student1->getAge() << endl;
-    delete student1; //释放堆空间内存
-    student1 = nullptr;
+//    auto *student1 = new Student1();
+//    student1->setName((char *) "马冬梅");
+//    student1->setAge(18);
+//    cout << student1->getName() << " " << student1->getAge() << endl;
+//    delete student1; //释放堆空间内存
+//    student1 = nullptr;
 
 }
 

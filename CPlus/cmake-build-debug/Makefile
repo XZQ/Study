@@ -153,54 +153,6 @@ array/CintTest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/array/CintTest.cpp.s
 .PHONY : array/CintTest.cpp.s
 
-base/Construction.o: base/Construction.cpp.o
-.PHONY : base/Construction.o
-
-# target to build an object file
-base/Construction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Construction.cpp.o
-.PHONY : base/Construction.cpp.o
-
-base/Construction.i: base/Construction.cpp.i
-.PHONY : base/Construction.i
-
-# target to preprocess a source file
-base/Construction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Construction.cpp.i
-.PHONY : base/Construction.cpp.i
-
-base/Construction.s: base/Construction.cpp.s
-.PHONY : base/Construction.s
-
-# target to generate assembly for a file
-base/Construction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Construction.cpp.s
-.PHONY : base/Construction.cpp.s
-
-base/Date.o: base/Date.cpp.o
-.PHONY : base/Date.o
-
-# target to build an object file
-base/Date.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Date.cpp.o
-.PHONY : base/Date.cpp.o
-
-base/Date.i: base/Date.cpp.i
-.PHONY : base/Date.i
-
-# target to preprocess a source file
-base/Date.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Date.cpp.i
-.PHONY : base/Date.cpp.i
-
-base/Date.s: base/Date.cpp.s
-.PHONY : base/Date.s
-
-# target to generate assembly for a file
-base/Date.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Date.cpp.s
-.PHONY : base/Date.cpp.s
-
 base/MyTeacher.o: base/MyTeacher.cpp.o
 .PHONY : base/MyTeacher.o
 
@@ -224,30 +176,6 @@ base/MyTeacher.s: base/MyTeacher.cpp.s
 base/MyTeacher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/MyTeacher.cpp.s
 .PHONY : base/MyTeacher.cpp.s
-
-base/Person.o: base/Person.cpp.o
-.PHONY : base/Person.o
-
-# target to build an object file
-base/Person.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Person.cpp.o
-.PHONY : base/Person.cpp.o
-
-base/Person.i: base/Person.cpp.i
-.PHONY : base/Person.i
-
-# target to preprocess a source file
-base/Person.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Person.cpp.i
-.PHONY : base/Person.cpp.i
-
-base/Person.s: base/Person.cpp.s
-.PHONY : base/Person.s
-
-# target to generate assembly for a file
-base/Person.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/Person.cpp.s
-.PHONY : base/Person.cpp.s
 
 base/Student.o: base/Student.cpp.o
 .PHONY : base/Student.o
@@ -297,30 +225,6 @@ base/newbase.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/base/newbase.cpp.s
 .PHONY : base/newbase.cpp.s
 
-datastruct/Solution.o: datastruct/Solution.cpp.o
-.PHONY : datastruct/Solution.o
-
-# target to build an object file
-datastruct/Solution.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/Solution.cpp.o
-.PHONY : datastruct/Solution.cpp.o
-
-datastruct/Solution.i: datastruct/Solution.cpp.i
-.PHONY : datastruct/Solution.i
-
-# target to preprocess a source file
-datastruct/Solution.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/Solution.cpp.i
-.PHONY : datastruct/Solution.cpp.i
-
-datastruct/Solution.s: datastruct/Solution.cpp.s
-.PHONY : datastruct/Solution.s
-
-# target to generate assembly for a file
-datastruct/Solution.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/Solution.cpp.s
-.PHONY : datastruct/Solution.cpp.s
-
 datastruct/algotithm/Algorithm.o: datastruct/algotithm/Algorithm.cpp.o
 .PHONY : datastruct/algotithm/Algorithm.o
 
@@ -345,54 +249,6 @@ datastruct/algotithm/Algorithm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Algorithm.cpp.s
 .PHONY : datastruct/algotithm/Algorithm.cpp.s
 
-datastruct/algotithm/Student1.o: datastruct/algotithm/Student1.cpp.o
-.PHONY : datastruct/algotithm/Student1.o
-
-# target to build an object file
-datastruct/algotithm/Student1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.o
-.PHONY : datastruct/algotithm/Student1.cpp.o
-
-datastruct/algotithm/Student1.i: datastruct/algotithm/Student1.cpp.i
-.PHONY : datastruct/algotithm/Student1.i
-
-# target to preprocess a source file
-datastruct/algotithm/Student1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.i
-.PHONY : datastruct/algotithm/Student1.cpp.i
-
-datastruct/algotithm/Student1.s: datastruct/algotithm/Student1.cpp.s
-.PHONY : datastruct/algotithm/Student1.s
-
-# target to generate assembly for a file
-datastruct/algotithm/Student1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/algotithm/Student1.cpp.s
-.PHONY : datastruct/algotithm/Student1.cpp.s
-
-datastruct/typeconversion/TypeConver.o: datastruct/typeconversion/TypeConver.cpp.o
-.PHONY : datastruct/typeconversion/TypeConver.o
-
-# target to build an object file
-datastruct/typeconversion/TypeConver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/typeconversion/TypeConver.cpp.o
-.PHONY : datastruct/typeconversion/TypeConver.cpp.o
-
-datastruct/typeconversion/TypeConver.i: datastruct/typeconversion/TypeConver.cpp.i
-.PHONY : datastruct/typeconversion/TypeConver.i
-
-# target to preprocess a source file
-datastruct/typeconversion/TypeConver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/typeconversion/TypeConver.cpp.i
-.PHONY : datastruct/typeconversion/TypeConver.cpp.i
-
-datastruct/typeconversion/TypeConver.s: datastruct/typeconversion/TypeConver.cpp.s
-.PHONY : datastruct/typeconversion/TypeConver.s
-
-# target to generate assembly for a file
-datastruct/typeconversion/TypeConver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/datastruct/typeconversion/TypeConver.cpp.s
-.PHONY : datastruct/typeconversion/TypeConver.cpp.s
-
 extendsPolymorphic/Base.o: extendsPolymorphic/Base.cpp.o
 .PHONY : extendsPolymorphic/Base.o
 
@@ -416,54 +272,6 @@ extendsPolymorphic/Base.s: extendsPolymorphic/Base.cpp.s
 extendsPolymorphic/Base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Base.cpp.s
 .PHONY : extendsPolymorphic/Base.cpp.s
-
-extendsPolymorphic/Derived.o: extendsPolymorphic/Derived.cpp.o
-.PHONY : extendsPolymorphic/Derived.o
-
-# target to build an object file
-extendsPolymorphic/Derived.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.o
-.PHONY : extendsPolymorphic/Derived.cpp.o
-
-extendsPolymorphic/Derived.i: extendsPolymorphic/Derived.cpp.i
-.PHONY : extendsPolymorphic/Derived.i
-
-# target to preprocess a source file
-extendsPolymorphic/Derived.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.i
-.PHONY : extendsPolymorphic/Derived.cpp.i
-
-extendsPolymorphic/Derived.s: extendsPolymorphic/Derived.cpp.s
-.PHONY : extendsPolymorphic/Derived.s
-
-# target to generate assembly for a file
-extendsPolymorphic/Derived.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived.cpp.s
-.PHONY : extendsPolymorphic/Derived.cpp.s
-
-extendsPolymorphic/Derived2.o: extendsPolymorphic/Derived2.cpp.o
-.PHONY : extendsPolymorphic/Derived2.o
-
-# target to build an object file
-extendsPolymorphic/Derived2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.o
-.PHONY : extendsPolymorphic/Derived2.cpp.o
-
-extendsPolymorphic/Derived2.i: extendsPolymorphic/Derived2.cpp.i
-.PHONY : extendsPolymorphic/Derived2.i
-
-# target to preprocess a source file
-extendsPolymorphic/Derived2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.i
-.PHONY : extendsPolymorphic/Derived2.cpp.i
-
-extendsPolymorphic/Derived2.s: extendsPolymorphic/Derived2.cpp.s
-.PHONY : extendsPolymorphic/Derived2.s
-
-# target to generate assembly for a file
-extendsPolymorphic/Derived2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CPlus.dir/build.make CMakeFiles/CPlus.dir/extendsPolymorphic/Derived2.cpp.s
-.PHONY : extendsPolymorphic/Derived2.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -621,45 +429,21 @@ help:
 	@echo "... array/CintTest.o"
 	@echo "... array/CintTest.i"
 	@echo "... array/CintTest.s"
-	@echo "... base/Construction.o"
-	@echo "... base/Construction.i"
-	@echo "... base/Construction.s"
-	@echo "... base/Date.o"
-	@echo "... base/Date.i"
-	@echo "... base/Date.s"
 	@echo "... base/MyTeacher.o"
 	@echo "... base/MyTeacher.i"
 	@echo "... base/MyTeacher.s"
-	@echo "... base/Person.o"
-	@echo "... base/Person.i"
-	@echo "... base/Person.s"
 	@echo "... base/Student.o"
 	@echo "... base/Student.i"
 	@echo "... base/Student.s"
 	@echo "... base/newbase.o"
 	@echo "... base/newbase.i"
 	@echo "... base/newbase.s"
-	@echo "... datastruct/Solution.o"
-	@echo "... datastruct/Solution.i"
-	@echo "... datastruct/Solution.s"
 	@echo "... datastruct/algotithm/Algorithm.o"
 	@echo "... datastruct/algotithm/Algorithm.i"
 	@echo "... datastruct/algotithm/Algorithm.s"
-	@echo "... datastruct/algotithm/Student1.o"
-	@echo "... datastruct/algotithm/Student1.i"
-	@echo "... datastruct/algotithm/Student1.s"
-	@echo "... datastruct/typeconversion/TypeConver.o"
-	@echo "... datastruct/typeconversion/TypeConver.i"
-	@echo "... datastruct/typeconversion/TypeConver.s"
 	@echo "... extendsPolymorphic/Base.o"
 	@echo "... extendsPolymorphic/Base.i"
 	@echo "... extendsPolymorphic/Base.s"
-	@echo "... extendsPolymorphic/Derived.o"
-	@echo "... extendsPolymorphic/Derived.i"
-	@echo "... extendsPolymorphic/Derived.s"
-	@echo "... extendsPolymorphic/Derived2.o"
-	@echo "... extendsPolymorphic/Derived2.i"
-	@echo "... extendsPolymorphic/Derived2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
