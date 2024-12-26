@@ -31,7 +31,7 @@ class GcOwner {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
+//        super.finalize();
         System.out.println("------  GcOwner   finalize");
     }
 }
