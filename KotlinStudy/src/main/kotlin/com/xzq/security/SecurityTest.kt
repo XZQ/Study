@@ -4,8 +4,10 @@ import com.google.gson.Gson
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
 import java.io.File
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.util.ArrayList
 import java.util.concurrent.atomic.AtomicInteger
 
 
@@ -14,9 +16,36 @@ val gson = Gson()
 
 data class Response<T>(val value: T, val isLocal: Boolean)
 
-fun main() {
-    test()
+const val REAR_WINDSHIELD = 16777218
+const val ROOF_TOP_1 = 16842752
+const val ROOF_TOP_2 = 16908288
+const val ROW_2_LEFT = 16777472
+const val ROW_2_RIGHT = 16778240
+
+fun getNoMoreThanTwoDigits(number: Double): String {
+    val format = DecimalFormat("0")
+    //未保留小数的舍弃规则，RoundingMode.FLOOR表示直接舍弃。
+    format.roundingMode = RoundingMode.FLOOR
+    return format.format(number)
 }
+
+fun main() {
+    val list = ArrayList<MyCar>()
+    list.add(MyCar(null))
+    list.add(MyCar(""))
+    list.add(MyCar("123"))
+    list.add(MyCar("132"))
+
+}
+
+fun getVinCode(list: ArrayList<MyCar>): MyCar? {
+    return list.filter { !it.vin.isNullOrEmpty() }.firstOrNull { it.vin!!.endsWith("123") }
+}
+
+fun getVinCode1(list: List<MyCar>): MyCar? {
+    return list.find { it.vin!!.endsWith("123") }
+}
+
 
 var count = 0
 val atomicCount = AtomicInteger(0)

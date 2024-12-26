@@ -10,6 +10,7 @@
 
 using namespace std;
 
+// https://blog.csdn.net/cl122763974/article/details/139693205
 void testArray1() {
     char str1[] = {"111111"};// 数组
     const char *str2 = "helloworld"; // 常量指针，值不可改变，指针可变

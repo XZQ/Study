@@ -28,12 +28,12 @@ void createThread() {
 }
 
 
-int main() {
-    std::thread first(thread1);
-    std::cout << "主线程\n";
-    first.join(); //必须说明添加线程的方式
-    return 0;
-}
+// int main() {
+//     std::thread first(thread1);
+//     std::cout << "主线程\n";
+//     first.join(); //必须说明添加线程的方式
+//     return 0;
+// }
 
 
 // https://juejin.cn/post/6844903668026703880#heading-5

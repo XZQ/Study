@@ -1,5 +1,7 @@
 package com.xzq.util
 
+import com.xzq.instance.Coffeeee
+import com.xzq.instance.Coffeeee11
 import okio.Okio
 import okio.buffer
 import okio.source
@@ -12,8 +14,9 @@ object OkioTest {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val filePath = "/Users/zhiqiang.xia1/Documents/NT3/NT3"
-        readLines1(File(filePath))
+//        val filePath = "/Users/zhiqiang.xia1/Documents/NT3/NT3"Oss
+//        readLines1(File(filePath))
+        Coffeeee.getInstance1()
     }
 
     @Throws(IOException::class)

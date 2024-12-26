@@ -17,6 +17,17 @@ fun test() {
     }
 }
 
+const val TYPE_NOTIFICATION = 1
+const val TYPE_CAPSULE = 2
+const val TYPE_LAUNCHER_CARD = 8
+const val TYPE_SKL_CARD = 16
+const val TYPE_MASK = 27
+const val CONTENT_NOTIFICATION = 1
+const val CONTENT_SMALL_CAPSULE = 2
+const val CONTENT_LARGE_CAPSULE = 3
+const val CONTENT_LAUNCHER_CARD = 4
+const val CONTENT_SKL_CARD = 5
+
 fun main() {
     GlobalScope.launch {
         val localRequest = getUserFromLocal("xxx")

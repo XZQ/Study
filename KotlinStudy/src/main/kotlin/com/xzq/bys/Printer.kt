@@ -1,6 +1,5 @@
 package com.xzq.bys
 
-import jdk.jshell.execution.LoaderDelegate
 
 interface Printer {
     fun print(message: String)
