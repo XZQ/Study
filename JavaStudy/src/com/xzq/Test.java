@@ -123,12 +123,7 @@ public class Test {
             data.add(i);
         }
 
-        data.stream().forEach(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                System.out.println("---->>         " + integer);
-            }
-        });
+        data.forEach(integer -> System.out.println("---->>         " + integer));
     }
 
 

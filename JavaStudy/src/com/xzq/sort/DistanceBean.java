@@ -1,7 +1,5 @@
 package com.xzq.sort;
 
-import java.util.Comparator;
-
 public class DistanceBean {
 
     private String id;
@@ -16,7 +14,7 @@ public class DistanceBean {
         this.id = id;
     }
 
-    public String getName() {
+    public  String getName() {
         return name;
     }
 

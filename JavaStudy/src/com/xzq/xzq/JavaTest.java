@@ -1,22 +1,27 @@
 package com.xzq.xzq;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class JavaTest {
 
     private Thread thread;
 
+    public final static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
     public static void main(String[] args) {
-        String dev = "187231";
+//        long curTime = System.currentTimeMillis()-30 * 60 * 1000L;
+//        Calendar calendar = Calendar.getInstance();
+//        System.out.println("curTime=" + curTime + "     curTime=" + format.format(curTime));
+//        calendar.setTime(new Date(curTime + 30 * 60 * 1000L));
+//        long calTime = calendar.getTime().getTime();
+//        System.out.println("calTime=" + calTime + "     calTime=" + format.format(calTime)+ "     calTime=" + format.format(calendar.getTime()));
 
-        System.out.println(dev.charAt(0));
-        System.out.println(dev.charAt(1));
-        System.out.println(dev.charAt(2));
-        System.out.println(dev.charAt(3));
-        System.out.println(dev.charAt(4));
-        System.out.println(dev.charAt(5));
+
+        String str = "预计2分钟后送达服务订单";
+
 
     }
 
