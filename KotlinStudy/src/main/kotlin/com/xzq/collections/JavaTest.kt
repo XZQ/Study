@@ -1,15 +1,11 @@
 package com.xzq.collections
 
 import com.xzq.flow.Bean
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 object JavaTest {
-
+    const val COUNTDOWN_TIME: Long = 15 * 60 * 1000L
 
     fun main(args: Array<String>) {
 
@@ -34,6 +30,7 @@ object JavaTest {
         // 使用 Base64 编码器对字符串进行编码
         val encoder: Base64.Encoder = Base64.getEncoder()
         val encoded: String = encoder.encodeToString(string.toByteArray())
+
     }
 
 
@@ -41,4 +38,7 @@ object JavaTest {
         delay(1000L)
         ""
     }
+
+
+
 }

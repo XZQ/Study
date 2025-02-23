@@ -1,4 +1,4 @@
-package com.xzq.kotlin
+package com.xzq.kotlin.lock
 
 //https://juejin.cn/post/7083683702999351310
 private val lock = "lock"

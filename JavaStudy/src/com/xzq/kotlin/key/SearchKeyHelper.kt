@@ -1,4 +1,4 @@
-package com.xzq.kotlin
+package com.xzq.kotlin.key
 
 class SearchKeyHelper {
 

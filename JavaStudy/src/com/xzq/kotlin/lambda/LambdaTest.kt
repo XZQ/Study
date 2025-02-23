@@ -1,4 +1,4 @@
-package com.xzq.kotlin
+package com.xzq.kotlin.lambda
 
 private fun lambdaFunction(function: (Int, Int) -> Int): Int {
     return function(2, 3)

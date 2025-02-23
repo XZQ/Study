@@ -1,5 +1,11 @@
 package com.xzq.kt
 
+import com.xzq.collections.JavaTest.COUNTDOWN_TIME
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
 //import kotlinx.coroutines.*
 //import java.math.BigDecimal
 //
@@ -7,50 +13,11 @@ package com.xzq.kt
 
 
 fun main() {
-    val numbers = listOf(1, 2, 3, 4, 5)
-    val squaredNumbers = numbers.map { it * it }
-//    println("squaredNumbers:$squaredNumbers")
 
-    val sum = numbers.reduce { acc, i -> acc + i }
-//    println("sum:$sum")
+}
 
-    val sum1 = numbers.fold(5) { acc, i -> acc + i }
-//    println("sum1:$sum1")
+fun startTimeCountDown() {
 
-
-    val words = listOf("hello", "world", "kotlin")
-    val chars = words.flatMap { it.toList() }
-//    println("chars:$chars")
-
-    data class Person(val name: String, val age: Int)
-    //groupBy:根据指定的键将集合分组，返回一个 Map 对象。
-    val people = listOf(
-        Person("Alice", 20),
-        Person("Bob", 22),
-        Person("Charlie", 20),
-        Person("David", 25)
-    )
-    val groupedPeople = people.groupBy { it.age }
-    val sortedBy = people.sortedBy { it.age }
-//    println("sortedBy:$sortedBy")
-
-    val result = numbers.takeWhile { it <= 3 }
-//    println("result:$result")
-
-    val result1 = numbers.any { it % 2 == 0 }
-//    println("result:$result1")
-
-    val list = mutableListOf<Int>()
-    list.also {
-        it.add(1)
-    }
-
-    transformFunction()
-
-
-    runRunnable {
-        println("SSSSS")
-    }
 }
 
 private fun runRunnable(block: () -> Unit) {

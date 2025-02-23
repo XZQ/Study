@@ -1,7 +1,4 @@
-package com.xzq.kotlin
-
-import kotlin.contracts.InvocationKind
-import kotlin.contracts.contract
+package com.xzq.kotlin.inout
 
 /**
  * https://juejin.cn/post/6888345234653052941#heading-5

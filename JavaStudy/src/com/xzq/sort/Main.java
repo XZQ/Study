@@ -13,11 +13,9 @@ public class Main {
         list.add(new DistanceBean("3", "Tesla", 1422));
         list.add(new DistanceBean("4", "Google", 122));
         list.add(new DistanceBean("5", "Meta", 1));
-
         list.sort(Comparator.comparing(DistanceBean::getDistance));
         list.sort(Comparator.comparing(DistanceBean::getDistance, Comparator.reverseOrder()));
         list.sort(Comparator.comparing(DistanceBean::getDistance).thenComparing(DistanceBean::getName));
-
         for (DistanceBean distanceBean : list) {
             System.out.println(distanceBean.toString());
         }
