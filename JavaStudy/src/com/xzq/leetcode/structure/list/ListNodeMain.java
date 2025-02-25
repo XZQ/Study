@@ -46,7 +46,7 @@ public class ListNodeMain {
         ListNode cur = head;
         ListNode pre = null;
 
-        while ( cur.val != val) {
+        while (cur.val != val) {
             pre = cur;
             cur = cur.next;
         }
