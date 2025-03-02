@@ -3,6 +3,7 @@ package com.xzq.collections
 import com.xzq.flow.Bean
 import kotlinx.coroutines.*
 import java.util.*
+import java.util.concurrent.ArrayBlockingQueue
 
 object JavaTest {
     const val COUNTDOWN_TIME: Long = 15 * 60 * 1000L
@@ -30,6 +31,8 @@ object JavaTest {
         // 使用 Base64 编码器对字符串进行编码
         val encoder: Base64.Encoder = Base64.getEncoder()
         val encoded: String = encoder.encodeToString(string.toByteArray())
+
+        val text = ArrayBlockingQueue<String>(10)
 
     }
 
