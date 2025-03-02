@@ -1,7 +1,9 @@
 package com.xzq.design.proxy;
 
-import com.xzq.design.proxy.cglib.Calculator;
+import com.xzq.design.proxy.jdk.dynamic.BigStar;
 import com.xzq.design.proxy.jdk.dynamic.DynamicProxyHandler;
+import com.xzq.design.proxy.jdk.dynamic.Star;
+import com.xzq.design.proxy.jdk.dynamic.StarInvocationHandler;
 import com.xzq.design.proxy.jdk.staticproxy.FileUploader;
 import com.xzq.design.proxy.jdk.staticproxy.ProxyFileUploader;
 import com.xzq.design.proxy.jdk.staticproxy.RealFileUploader;
@@ -18,7 +20,7 @@ public class Client {
 
     public static void main(String[] args) {
         System.setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
-        proxy1();
+        proxyDynamic2();
     }
 
     //https://blog.csdn.net/afterlife_union/article/details/131484659 错误
@@ -44,6 +46,13 @@ public class Client {
         FileUploader fileUploader = new RealFileUploader();
         ProxyFileUploader proxyFileUploader = new ProxyFileUploader(fileUploader);
         proxyFileUploader.upload("tes.txt");
+    }
+
+    static void proxyDynamic2() {
+        Star star = new BigStar("XZQ");
+        StarInvocationHandler invocationHandler = new StarInvocationHandler(star);
+        Star proxyInstance = (Star) Proxy.newProxyInstance(star.getClass().getClassLoader(), star.getClass().getInterfaces(), invocationHandler);
+        proxyInstance.sing("TTT");
     }
 
 }
