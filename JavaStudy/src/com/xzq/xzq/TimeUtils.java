@@ -14,8 +14,8 @@ public class TimeUtils {
 
     public static void main(String[] args) {
 
-        String str ="1022.5";
-        System.out.println(Double.parseDouble(str));
+        String str ="1741077000000";
+        System.out.println(format.format(1741077600000L));
 
     }
 
