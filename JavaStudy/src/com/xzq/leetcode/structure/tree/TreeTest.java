@@ -1,22 +1,51 @@
 package com.xzq.leetcode.structure.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class TreeTest {
 
     public static void main(String[] args) {
 
-        TreeNode child = new TreeNode(1);
-        TreeNode left = new TreeNode(0);
-        left.left = child;
-        TreeNode right = new TreeNode(2);
-        TreeNode node = new TreeNode(3, left, right);
+//        TreeNode child = new TreeNode(1);
+//        TreeNode left = new TreeNode(0);
+//        left.left = child;
+//        TreeNode right = new TreeNode(2);
+//        TreeNode node = new TreeNode(3, left, right);
+//
+//        System.out.println(traversalDepth(node));
 
-        System.out.println(traversalDepth(node));
+        Node node = new Node(1, new Node(2), new Node(3));
+        System.out.println(connect(node));
     }
+
+    public static Node connect(Node root) {
+        if (root == null) {
+            return null;
+        }
+        Queue<Node> linkedList = new LinkedList<Node>();
+        linkedList.add(root);
+
+        while (!linkedList.isEmpty()) {
+            int size = linkedList.size();
+            for (int i = 0; i < size; i++) {
+                Node temp = linkedList.poll();
+                if (i + 1 == size) {
+                    temp.next = null;
+                } else {
+                    temp.next = linkedList.peek();
+                }
+                if (temp.left != null) {
+                    linkedList.offer(temp.left);
+                }
+                if (temp.right != null) {
+                    linkedList.offer(temp.right);
+                }
+            }
+        }
+
+        return root;
+    }
+
 
     // https://blog.csdn.net/weixin_45924718/article/details/123076980
     // https://blog.csdn.net/nameofcsdn/article/details/115260255

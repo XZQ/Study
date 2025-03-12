@@ -22,22 +22,13 @@ import java.util.*;
 public class TreeMain {
 
     public static void main(String[] args) {
-//        int[] nums = new int[]{3, 2, 1, 6, 0, 5};
-//        System.out.println(maxTree(nums, 0, nums.length - 1));
 
-//        int[] inorder = {3,9,20,15,7};
-//        int[] postorder = {9,3,15,20,7};
-//        System.out.println(buildTree(inorder, postorder));
-
-        TreeNode treeNode = new TreeNode(1);
-        TreeNode r1 = new TreeNode(2);
-        r1.left = new TreeNode(3);
-        treeNode.left = r1;
-
-        inorderTraversal(treeNode);
+//        TreeNode treeNode = new TreeNode(1);
+//        TreeNode r1 = new TreeNode(2);
+//        r1.left = new TreeNode(3);
+//        treeNode.left = r1;
+//        inorderTraversal(treeNode);
     }
-
-
     // 94. 二叉树的中序遍历
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -68,7 +59,6 @@ public class TreeMain {
         if (root == null) {
             return 0;
         }
-
         dfsMaxPathSum(root);
 
         return max;

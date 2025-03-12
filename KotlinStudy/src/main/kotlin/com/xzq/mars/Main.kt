@@ -9,8 +9,10 @@ val list = listOf("abc.png", "ppt2.gif", "ppt.gif", "1word.jpg", "12text2.gif", 
 val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
 fun main() {
-    println(getMinute("89"))
-    println(getTimeText1("89"))
+    val size = 3
+    for (index in 0 until size) {
+        println(index)
+    }
 }
 
 /**
