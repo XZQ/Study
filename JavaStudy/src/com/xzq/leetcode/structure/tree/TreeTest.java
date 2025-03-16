@@ -136,6 +136,67 @@ public class TreeTest {
         return root;
     }
 
+    public List<Integer> postorder(NodeChildren root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        Stack<NodeChildren> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            NodeChildren node = stack.pop();
+            list.add(node.val);
+            for (NodeChildren nodeChildren : node.children) {
+                stack.push(nodeChildren);
+            }
+        }
+        Collections.reverse(list);
+        return list;
+    }
+
+    public List<Integer> preorder(NodeChildren root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        Stack<NodeChildren> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            NodeChildren node = stack.pop();
+            list.add(node.val);
+
+            for (int i = node.children.size() - 1; i >= 0; i--) {
+                stack.push(node.children.get(i));
+            }
+        }
+
+        return list;
+    }
+
+    // N叉树 层序遍历
+    public List<List<Integer>> levelOrder(NodeChildren root) {
+        List<List<Integer>> lists = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return lists;
+        }
+        Queue<NodeChildren> queue = new LinkedList<NodeChildren>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                NodeChildren node = queue.poll();
+                list.add(node.val);
+                if (node.children != null) {
+                    queue.addAll(node.children);
+                }
+            }
+            lists.add(list);
+        }
+        return lists;
+    }
+
 
     // https://blog.csdn.net/weixin_45924718/article/details/123076980
     // https://blog.csdn.net/nameofcsdn/article/details/115260255

@@ -29,6 +29,7 @@ public class TreeMain {
 //        treeNode.left = r1;
 //        inorderTraversal(treeNode);
     }
+
     // 94. 二叉树的中序遍历
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -292,48 +293,6 @@ public class TreeMain {
         return result.stream().mapToInt(Integer::intValue).toArray();
     }
 
-//    ArrayList<Integer> fList = new ArrayList<>();
-//    int faxCount;
-//    int fcount;
-//    TreeNode fpre;
-//
-//    public int[] findMode(TreeNode root) {
-//        findMode1(root);
-//        int[] res = new int[fList.size()];
-//        for (int i = 0; i < fList.size(); i++) {
-//            res[i] = fList.get(i);
-//        }
-//        return res;
-//    }
-//
-//    private void findMode1Mode1(TreeNode root) {
-//        if (root == null) {
-//            return;
-//        }
-//
-//        findMode1(root.left);
-//
-//        int rootValue = root.val;
-//
-//        if (fpre != null && fpre.val == rootValue) {
-//            fcount++;
-//        } else {
-//            fcount = 1;
-//        }
-//
-//        if (fcount > faxCount) {
-//            fList.clear();
-//            fList.add(rootValue);
-//            faxCount = fcount;
-//        } else if (fcount == faxCount) {
-//            fList.add(rootValue);
-//        }
-//
-//        fpre = root;
-//
-//        findMode1(root.right);
-//    }
-
 
     // 530. 二叉搜索树的最小绝对差
     public int getMinimumDifference(TreeNode root) {
@@ -362,33 +321,6 @@ public class TreeMain {
 
         return min;
     }
-//    ArrayList<Integer> integers = new ArrayList<>();
-//
-//    public int getMinimumDifference(TreeNode root) {
-//
-//        dfsMinimumDifference(root);
-//
-//        if (integers.isEmpty()) {
-//            return 0;
-//        }
-//
-//        int min = Integer.MAX_VALUE;
-//        for (int i = 1; i < integers.size(); i++) {
-//            min = Math.min(min, (integers.get(i) - integers.get(i - 1)));
-//        }
-//
-//        return min;
-//    }
-//
-//    private void dfsMinimumDifference(TreeNode root) {
-//        if (root == null) {
-//            return;
-//        }
-//
-//        dfsMinimumDifference(root.left);
-//        integers.add(root.val);
-//        dfsMinimumDifference(root.right);
-//    }
 
 
     // 700. 二叉搜索树中的搜索
