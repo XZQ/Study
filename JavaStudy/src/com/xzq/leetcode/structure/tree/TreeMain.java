@@ -1100,41 +1100,7 @@ public class TreeMain {
         return list;
     }
 
-    // 226. 翻转二叉树2
-    public TreeNode invertTree2(TreeNode root) {
-        if (root == null) {
-            return root;
-        }
 
-        Deque<TreeNode> deque = new LinkedList<>();
-        deque.add(root);
-
-        while (!deque.isEmpty()) {
-
-            int size = deque.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node = deque.poll();
-                swap(node);
-
-                if (node.left != null) {
-                    deque.add(node.left);
-                }
-
-                if (node.right != null) {
-                    deque.add(node.right);
-                }
-            }
-        }
-
-        return root;
-    }
-
-    public TreeNode swap(TreeNode node) {
-        TreeNode left = node.left;
-        node.left = node.right;
-        node.right = left;
-        return node;
-    }
 
 
     // 226. 翻转二叉树

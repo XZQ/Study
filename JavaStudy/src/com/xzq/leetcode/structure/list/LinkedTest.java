@@ -1,18 +1,107 @@
 package com.xzq.leetcode.structure.list;
 
+import java.util.Stack;
+
 public class LinkedTest {
 
     public static void main(String[] args) {
+        test();
+    }
+
+    public static void test() {
         ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(2);
+        ListNode l2 = new ListNode(8);
         ListNode l3 = new ListNode(3);
-        ListNode l4 = new ListNode(4);
-        ListNode l5 = new ListNode(5);
+//        ListNode l4 = new ListNode(4);
+//        ListNode l5 = new ListNode(5);
         l1.next = l2;
         l2.next = l3;
-        l3.next = l4;
-        l4.next = l5;
-        System.out.println(reverseBetween(l1, 3, 5));
+//        l3.next = l4;
+//        l4.next = l5;
+
+
+        ListNode l33 = new ListNode(6);
+        ListNode l44 = new ListNode(4);
+        ListNode l55 = new ListNode(5);
+        l33.next = l44;
+        l44.next = l55;
+        System.out.println(addTwoNumbers(l33, l1));
+    }
+
+    /**
+     * 445. 两数相加 II
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        Stack<Integer> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        while (l1 != null) {
+            stack1.push(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            stack2.push(l2.val);
+            l2 = l2.next;
+        }
+        ListNode dummy = new ListNode();
+        int carry = 0;
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+            int value1 = !stack1.isEmpty() ? stack1.pop() : 0;
+            int value2 = !stack2.isEmpty() ? stack2.pop() : 0;
+            int sum = value1 + value2 + carry;
+            carry = sum >= 10 ? 1 : 0;
+            ListNode node = new ListNode(sum % 10);
+            node.next = dummy.next;
+            dummy.next = node;
+        }
+        return dummy.next;
+    }
+
+    /**
+     * https://leetcode.cn/problems/lMSNwu/
+     * LCR 025. 两数相加 II
+     */
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode();
+        ListNode cursor = dummy;
+        int carry = 0;
+        while (l1 != null || l2 != null || carry != 0) {
+            int value1 = l1 != null ? l1.val : 0;
+            int value2 = l2 != null ? l2.val : 0;
+            int sum = value1 + value2 + carry;
+            carry = sum >= 10 ? 1 : 0;
+            ListNode sumNode = new ListNode(sum % 10);
+            cursor.next = sumNode;
+            cursor = sumNode;
+
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        return dummy.next;
+    }
+
+    /**
+     * https://leetcode.cn/problems/intersection-of-two-linked-lists/
+     * 160. 相交链表
+     */
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+
+        ListNode p = headA;//645
+        ListNode q = headB;//12345
+
+        while (p != q) {
+            p = (p != null) ? p.next : headB;
+            q = (q != null) ? q.next : headA;
+        }
+        return p;
+
     }
 
     /**
@@ -93,6 +182,9 @@ public class LinkedTest {
         }
         show.next = show.next.next;
         return dummy.next;
+        // 012345
+        //   2345
+
     }
 
     /**

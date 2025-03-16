@@ -5,17 +5,107 @@ import java.util.*;
 public class TreeTest {
 
     public static void main(String[] args) {
-
 //        TreeNode child = new TreeNode(1);
 //        TreeNode left = new TreeNode(0);
 //        left.left = child;
 //        TreeNode right = new TreeNode(2);
 //        TreeNode node = new TreeNode(3, left, right);
-//
 //        System.out.println(traversalDepth(node));
-
         Node node = new Node(1, new Node(2), new Node(3));
         System.out.println(connect(node));
+    }
+
+    /**
+     * 101. 对称二叉树
+     */
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+
+        return compare(root.left, root.right);
+    }
+
+    public static boolean compare(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
+            return true;
+        }
+
+        if (left == null || right == null || left.val != right.val) {
+            return false;
+        }
+
+        boolean l = compare(left.left, right.right);
+        boolean r = compare(left.right, right.left);
+
+        return l && r;
+    }
+
+    /**
+     * 114. 二叉树转换为链表
+     */
+    public void flatten(TreeNode root) {
+        Stack<TreeNode> stack = new Stack();
+        stack.push(root);
+        TreeNode prev = null;
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            if (prev != null) {
+                prev.left = null;
+                prev.right = node;
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            prev = node;
+        }
+    }
+
+    /**
+     * 951. 翻转等价二叉树
+     */
+    public static boolean flipEquiv(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null || root1.val != root2.val) {
+            return false;
+        }
+
+        boolean l1 = flipEquiv(root1.left, root2.left) && flipEquiv(root1.right, root2.right);
+        boolean l2 = flipEquiv(root1.left, root2.right) && flipEquiv(root1.right, root2.left);
+        return l1 || l2;
+    }
+
+    /**
+     * https://leetcode.cn/problems/invert-binary-tree/description/
+     * 226. 翻转二叉树
+     */
+    public TreeNode flipTree(TreeNode root) {
+        if (root == null) {
+            return root;
+        }
+        Queue<TreeNode> linkedList = new LinkedList();
+        linkedList.add(root);
+        while (!linkedList.isEmpty()) {
+            int size = linkedList.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = linkedList.poll();
+                TreeNode temp = node.left;
+                node.left = node.right;
+                node.right = temp;
+                if (node.left != null) {
+                    linkedList.add(node.left);
+                }
+                if (node.right != null) {
+                    linkedList.add(node.right);
+                }
+            }
+        }
+        return root;
     }
 
     public static Node connect(Node root) {
@@ -87,6 +177,7 @@ public class TreeTest {
     }
 
 
+    // 层序遍历
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
