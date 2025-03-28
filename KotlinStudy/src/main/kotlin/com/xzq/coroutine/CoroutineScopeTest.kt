@@ -1,6 +1,5 @@
 package com.xzq.coroutine
 
-import kotlinx.coroutines.CoroutineDispatcher
 
 fun main() {
 }

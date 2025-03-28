@@ -34,9 +34,18 @@ public class Test {
     public static void main(String[] args) {
 
 
-        String str = "移动专员待出发";
+        String str2 = "121.192189";
+        String str1 = "31.27815";
+        String str0 = "31.278314";
 
-        System.out.println(str.substring(2));
+
+        System.out.println(str0.length());
+        System.out.println(str1.length());
+        System.out.println(str2.length());
+
+        System.out.println(str0.substring(0,9));
+        System.out.println(str1.substring(0,8));
+        System.out.println(str2.substring(0,9));
 
 //        setRange(1, 8, 1);
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 hh:mm:ss");

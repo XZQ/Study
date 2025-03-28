@@ -414,50 +414,47 @@ public class TreeMain {
     //    https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     HashMap<Integer, Integer> buildTreeMap = new HashMap<>();
 
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int size = inorder.length;
-        for (int i = 0; i < size; i++) {
-            buildTreeMap.put(inorder[i], i);
-        }
-        return buildTree1(preorder, inorder, 0, preorder.length - 1, 0, size - 1);
-    }
+//    public TreeNode buildTree(int[] preorder, int[] inorder) {
+//        int size = inorder.length;
+//        for (int i = 0; i < size; i++) {
+//            buildTreeMap.put(inorder[i], i);
+//        }
+//        return buildTree1(preorder, inorder, 0, preorder.length - 1, 0, size - 1);
+//    }
+//
+//    private TreeNode buildTree1(int[] preorder, int[] inorder, int pl, int pr, int ii, int ir) {
+//        if (pl > pr || ii > ir) {
+//            return null;
+//        }
+//
+//        int k = map.get(preorder[pl]) - pl;
+//
+//        TreeNode treeNode = new TreeNode(preorder[pl]);
+//        treeNode.left = buildTree1(preorder, inorder, pl + 1, pl + k, ii, ii + k - 1);
+//        treeNode.right = buildTree1(preorder, inorder, pl + k + 1, pr, ii + k + 1, ir);
+//
+//        return treeNode;
+//    }
 
-    private TreeNode buildTree1(int[] preorder, int[] inorder, int pl, int pr, int ii, int ir) {
-        if (pl > pr || ii > ir) {
-            return null;
-        }
 
-        int k = map.get(preorder[pl]) - pl;
-
-        TreeNode treeNode = new TreeNode(preorder[pl]);
-        treeNode.left = buildTree1(preorder, inorder, pl + 1, pl + k, ii, ii + k - 1);
-        treeNode.right = buildTree1(preorder, inorder, pl + k + 1, pr, ii + k + 1, ir);
-
-        return treeNode;
-    }
-
-    //    106. 从中序与后序遍历序列构造二叉树
-    static HashMap<Integer, Integer> map = new HashMap<>();
+    private static Map<Integer, Integer> map = new HashMap<>();
 
     public static TreeNode buildTree2(int[] inorder, int[] postorder) {
-        int size = inorder.length;
-        for (int i = 0; i < size; i++) {
+        int length = inorder.length;
+        for (int i = 0; i < length; i++) {
             map.put(inorder[i], i);
         }
-
-        return buildTree3(inorder, postorder, 0, size - 1, 0, postorder.length - 1);
+        return buildTree1(inorder, postorder, 0, length - 1, 0, postorder.length - 1);
     }
 
-    private static TreeNode buildTree3(int[] inorder, int[] postorder, int inStart, int inEnd, int postStart, int postEnd) {
+    private static TreeNode buildTree1(int[] inorder, int[] postorder, int inStart, int inEnd, int postStart, int postEnd) {
         if (inStart > inEnd || postStart > postEnd) {
             return null;
         }
-
         int k = map.get(postorder[postEnd]) - inStart;
         TreeNode treeNode = new TreeNode(postorder[postEnd]);
-        treeNode.left = buildTree3(inorder, postorder, inStart, inStart + k - 1, postStart, postStart + k - 1);
-        treeNode.right = buildTree3(inorder, postorder, inStart + k + 1, inEnd, postStart + k, postEnd - 1);
-
+        treeNode.left = buildTree1(inorder, postorder, inStart, inStart + k - 1, postStart, postStart + k - 1);
+        treeNode.right = buildTree1(inorder, postorder, inStart + k + 1, inEnd, postStart + k, postEnd - 1);
         return treeNode;
     }
 
@@ -1031,8 +1028,6 @@ public class TreeMain {
 
         return list;
     }
-
-
 
 
     // 226. 翻转二叉树

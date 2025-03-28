@@ -1,5 +1,7 @@
 package com.xzq.leetcode.structure.list;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Stack;
 
 public class LinkedTest {
@@ -9,23 +11,48 @@ public class LinkedTest {
     }
 
     public static void test() {
-        ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(8);
-        ListNode l3 = new ListNode(3);
-//        ListNode l4 = new ListNode(4);
+        ListNode l1 = new ListNode(4);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(1);
+        ListNode l4 = new ListNode(3);
 //        ListNode l5 = new ListNode(5);
         l1.next = l2;
         l2.next = l3;
-//        l3.next = l4;
+        l3.next = l4;
 //        l4.next = l5;
+//        ListNode l33 = new ListNode(6);
+//        ListNode l44 = new ListNode(4);
+//        ListNode l55 = new ListNode(5);
+//        l33.next = l44;
+//        l44.next = l55;
+        System.out.println(sortList(l1));
+    }
 
+    /**
+     * 148. 排序链表
+     */
+    public static ListNode sortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
 
-        ListNode l33 = new ListNode(6);
-        ListNode l44 = new ListNode(4);
-        ListNode l55 = new ListNode(5);
-        l33.next = l44;
-        l44.next = l55;
-        System.out.println(addTwoNumbers(l33, l1));
+        ArrayList<Integer> list = new ArrayList<>();
+        ListNode cur = head;
+        while (cur != null) {
+            list.add(cur.val);
+            cur = cur.next;
+        }
+        Collections.sort(list);
+
+        ListNode dummy = new ListNode(list.get(0));
+        ListNode pointer = dummy;
+
+        for (int i = 1; i < list.size(); i++) {
+            pointer.next= new ListNode(list.get(i));
+            pointer = pointer.next;
+        }
+
+        return dummy;
     }
 
     /**
@@ -114,9 +141,7 @@ public class LinkedTest {
         for (int i = 0; i < left - 1; i++) {
             pre = pre.next;
         }
-
         ListNode cur = pre.next;
-
         for (int i = 0; i < right - left; i++) {
             ListNode next = cur.next;
             cur.next = next.next;
