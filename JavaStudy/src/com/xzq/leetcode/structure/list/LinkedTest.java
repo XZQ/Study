@@ -1,8 +1,8 @@
 package com.xzq.leetcode.structure.list;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Stack;
+import com.xzq.leetcode.structure.tree.TreeNode;
+
+import java.util.*;
 
 public class LinkedTest {
 
@@ -28,6 +28,98 @@ public class LinkedTest {
         System.out.println(sortList(l1));
     }
 
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        ListNode mid = middleNode(head);
+        ListNode l1 = head;
+        ListNode l2 = mid.next;
+        mid.next = null;
+        l2 = reverseList(l2);
+        while (l1 != null && l2 != null) {
+            ListNode l1_tmp = l1.next;
+            ListNode l2_tmp = l2.next;
+            l1.next = l2;
+            l1 = l1_tmp;
+            l2.next = l1;
+            l2 = l2_tmp;
+        }
+    }
+
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (i == size - 1) {
+                    result.add(node.val);
+                }
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+        }
+        return result;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
+    }
+
+    public ListNode middleNode(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode fast = head;
+        ListNode show = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            show = show.next;
+        }
+        return show;
+    }
+
+    /**
+     * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">...</a>
+     * 19. 删除链表的倒数第 N 个结点
+     */
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(-1, head);
+        ListNode show = dummy;
+        ListNode fast = dummy;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+        while (fast.next != null) {
+            show = show.next;
+            fast = fast.next;
+        }
+        show.next = show.next.next;
+        return dummy.next;
+    }
+
     /**
      * 148. 排序链表
      */
@@ -35,25 +127,49 @@ public class LinkedTest {
         if (head == null || head.next == null) {
             return head;
         }
-
-        ArrayList<Integer> list = new ArrayList<>();
-        ListNode cur = head;
-        while (cur != null) {
-            list.add(cur.val);
-            cur = cur.next;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        while (head != null) {
+            arrayList.add(head.val);
+            head = head.next;
         }
-        Collections.sort(list);
-
-        ListNode dummy = new ListNode(list.get(0));
-        ListNode pointer = dummy;
-
-        for (int i = 1; i < list.size(); i++) {
-            pointer.next= new ListNode(list.get(i));
-            pointer = pointer.next;
+        Collections.sort(arrayList);
+        ListNode dummy = new ListNode(-1);
+        ListNode point = dummy;
+        for (Integer integer : arrayList) {
+            point.next = new ListNode(integer);
+            point = point.next;
         }
 
-        return dummy;
+        return dummy.next;
+
     }
+
+    public ListNode detectCycle(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode fast = head;
+        ListNode show = head;
+        boolean hasCycle = false;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            show = show.next;
+            if (fast == show) {
+                hasCycle = true;
+                break;
+            }
+        }
+        if (hasCycle) {
+            show = head;
+            while (fast != show) {
+                fast = fast.next;
+                show = show.next;
+            }
+            return show;
+        }
+        return null;
+    }
+
 
     /**
      * 445. 两数相加 II
@@ -149,67 +265,6 @@ public class LinkedTest {
             pre.next = next;
         }
         return dummy.next;
-    }
-
-    /**
-     * https://leetcode.cn/problems/UHnkqh/description/
-     * LCR 024. 反转链表
-     */
-    public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode prev = null;
-        while (head != null) {
-            ListNode temp = head.next;
-            head.next = prev;
-            prev = head;
-            head = temp;
-        }
-        return prev;
-    }
-
-    /**
-     * https://leetcode.cn/problems/middle-of-the-linked-list/
-     * <p>
-     * 876. 链表的中间结点
-     */
-    public ListNode middleNode(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode show = head;
-        ListNode fast = head;
-        while (fast.next != null) {
-            show = show.next;
-            fast = fast.next.next;
-        }
-
-        return show;
-    }
-
-    /**
-     * https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
-     * 19. 删除链表的倒数第 N 个结点
-     */
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(0, head);
-        ListNode show = dummy;
-        ListNode fast = dummy;
-        for (int i = 0; i < n; i++) {
-            fast = fast.next;
-        }
-
-        while (fast.next != null) {
-            show = show.next;
-            fast = fast.next;
-        }
-        show.next = show.next.next;
-        return dummy.next;
-        // 012345
-        //   2345
-
     }
 
     /**

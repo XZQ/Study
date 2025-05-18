@@ -8,7 +8,6 @@ class Calculator<T : Number> {
 }
 
 class Calculator1<T> where T : Number, T : Runnable, T : Cloneable {
-
     fun test() {
 
     }

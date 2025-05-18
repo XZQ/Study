@@ -7,20 +7,11 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         main.combine(4, 2);
-//        System.out.println(main.partition("abc").size());
-
-//        List<String> list = Arrays.asList("aa", "bb", "cc", "dd");
-//        String ipNum = String.join(".", list);
-//        System.out.println(ipNum);
-
-//        main.restoreIpAddresses("25525511135");
-
         int[] ints = {1, 2};
         System.out.println(main.permute(ints));
     }
 
-    // 332. 重新安排行程\
-
+    // 332. 重新安排行程
     public List<String> findItinerary(List<List<String>> tickets) {
         List<String> result = new ArrayList<>();
         LinkedList<String> path = new LinkedList<>();
@@ -36,17 +27,13 @@ public class Main {
             result.addAll(path);
             return true;
         }
-
         for (int i = 0; i < tickets.size(); i++) {
-
             if (!used[i] && tickets.get(i).get(0).equals(path.getLast())) {
                 path.add(tickets.get(i).get(1));
                 used[i] = true;
-
                 if (backTrackingFindItinerary(tickets, result, path, used)) {
                     return true;
                 }
-
                 used[i] = false;
                 path.removeLast();
             }

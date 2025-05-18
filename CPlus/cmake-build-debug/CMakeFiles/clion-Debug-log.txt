@@ -1,18 +1,18 @@
-/Users/zhiqiang.xia1/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/zhiqiang.xia1/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus -B /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/cmake-build-debug
--- The C compiler identification is AppleClang 16.0.0.16000026
--- The CXX compiler identification is AppleClang 16.0.0.16000026
+C:\Users\XZQ\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S D:\BaiduSyncdisk\GitHup\Study\CPlus -B D:\BaiduSyncdisk\GitHup\Study\CPlus\cmake-build-debug
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Check for working C compiler: C:/Users/XZQ/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Check for working CXX compiler: C:/Users/XZQ/AppData/Local/Programs/CLion/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 ---------------
--- /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus
--- Configuring done (3.5s)
+-- D:/BaiduSyncdisk/GitHup/Study/CPlus
+-- Configuring done (7.0s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/zhiqiang.xia1/Documents/GitHub/Study/CPlus/cmake-build-debug
+-- Build files have been written to: D:/BaiduSyncdisk/GitHup/Study/CPlus/cmake-build-debug

@@ -371,20 +371,20 @@ void charArray1() {
     string sr1 = sr;
 }
 
-int testFork() {
-    pid_t pid = fork();
-    if (pid < 0) {
-        // fork failed
-        perror("fork");
-        return 1;
-    } else if (pid == 0) {
-        // In child process
-        printf("I am the child process, my PID is %d", getpid());
-    } else {
-        // In parent process
-        printf("I am the parent process, my PID is %d and my child's PID is %d \n", getpid(), pid);
-    }
-}
+// int testFork() {
+//     pid_t pid = fork();
+//     if (pid < 0) {
+//         // fork failed
+//         perror("fork");
+//         return 1;
+//     } else if (pid == 0) {
+//         // In child process
+//         printf("I am the child process, my PID is %d", getpid());
+//     } else {
+//         // In parent process
+//         printf("I am the parent process, my PID is %d and my child's PID is %d \n", getpid(), pid);
+//     }
+// }
 
 void fun(int *a) {
     cout << a << endl;
@@ -396,8 +396,6 @@ void fun1(int &a) {
 
 void test1() {
     int a = 10;
-
-
     //使用指针做形参
     fun(&a);
 
@@ -420,6 +418,20 @@ int main() {
     //    test_arr();
     //    charArray1();
     //    testFork();
-    test1();
+    // test1();
+    int size = 10;
+    auto *ptr = static_cast<int *>(malloc(size * sizeof(int)));
+    cout << "ptr=" << ptr << endl;
+
+    if (ptr == nullptr) {
+        cout << "内存分配失败" << endl;
+        return -1;
+    }
+
+    for (int i = 0; i < size; i++) {
+        ptr[i] = i;
+    }
+    free(ptr);
+
     return 0;
 }

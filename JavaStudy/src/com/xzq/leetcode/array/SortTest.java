@@ -15,7 +15,6 @@ public class SortTest {
         int[] arr = {5, 2, 8, 3, 1, 6};
         bubbleSort(arr);
         System.out.println("arr = " + Arrays.toString(arr));
-
         ExecutorService executor = Executors.newFixedThreadPool(5);
 
     }

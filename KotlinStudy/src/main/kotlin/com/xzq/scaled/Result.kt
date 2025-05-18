@@ -6,6 +6,8 @@ data class Success<T>(val data: T) : Result()
 
 data class Failure(val error: String) : Result()
 
+object Loadint : Result()
+
 
 
 // https://www.jianshu.com/p/8e57545398af

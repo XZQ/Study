@@ -4,10 +4,45 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
 var orderList = mutableListOf<String>()
+
 fun main() = runBlocking {
-    repeat(10) {
-        realQueryPendingOrder()
+    val a: String? = null
+    a?.let {
+        println("it")
     }
+    println("it")
+}
+
+inline fun <T> measureTime(block: () -> T): T {
+    val start = System.currentTimeMillis()
+    val result = block()
+    val end = System.currentTimeMillis()
+    println("Time taken: ${end - start} ms")
+    start.let {
+
+    }
+    return result
+}
+
+
+inline fun <T, R> T.let(block: (T) -> R): R {
+    return block(this)
+}
+
+
+fun buildString(block: StringBuilder.() -> Unit): String {
+    val sb = StringBuilder()
+    sb.block()
+    return sb.toString()
+}
+
+
+fun doWithLog(block: ((String) -> Unit)?) {
+    block?.invoke("a")
+}
+
+fun calculate(a: Int, b: Int, operation: (a: Int, b: Int) -> Int): Int {
+    return operation(a, b)
 }
 
 private var prevPendReqTime: Long = 0L

@@ -1,0 +1,3 @@
+C:\Users\XZQ\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\CPlus.dir/objects.a
+C:\Users\XZQ\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\CPlus.dir/objects.a @CMakeFiles\CPlus.dir\objects1.rsp
+C:\Users\XZQ\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\CPlus.dir/objects.a -Wl,--no-whole-archive -o CPlus.exe -Wl,--out-implib,libCPlus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CPlus.dir\linkLibs.rsp

@@ -17,7 +17,6 @@ class CustomPrinter(delegate: Printer) : Printer by delegate
 class CustomPrinter1(private val delegate: Printer) : Printer by delegate
 
 
-
 fun main() {
     val printer = DefaultPrinter()
     printer.print("Hello World!")
